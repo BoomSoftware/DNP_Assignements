@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNP_Assignements", "DNP_Assignements\DNP_Assignements.csproj", "{C6C31E3D-A79B-4D50-A8F8-93CEDE6C302C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1", "Assignment1\Assignment1.csproj", "{C6C31E3D-A79B-4D50-A8F8-93CEDE6C302C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
