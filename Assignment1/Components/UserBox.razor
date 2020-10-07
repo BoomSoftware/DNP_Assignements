@@ -1,0 +1,51 @@
+﻿@using Models
+<div class="user-box" style="@css">
+    <h3>@username</h3>
+    <br /> 
+    <p>
+        @userDescription
+    </p>
+    
+    
+    <button type="button" @onclick=buttonClicked>Select</button>
+</div>
+
+@code {
+
+    private string css => $"border: {borders};";
+    
+    [Parameter] public string Person { get; set; }
+
+    private string username;
+    private string userImagePath;
+    private string userDescription;
+
+    public string borders { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        switch (Person)
+        {
+            case "Administrator":
+                username = "Administrator";
+                userDescription = "All functions are available for this type of account.";
+                break;
+            case "RegularUser":
+                username = "Regular User";
+                userDescription = "Function for update family information is available for this type of account";
+                break;
+            case "Visitor":
+                username = "Visitor";
+                userDescription = "Function for viewing family information is available for thins type of account";
+                break;
+        }
+    }
+
+
+    public void buttonClicked()
+    {
+        borders = "3px solid green";
+    }
+
+}

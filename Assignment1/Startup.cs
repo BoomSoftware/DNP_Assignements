@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Assignment1.Data;
+using Assignment1.Data.Implementation;
 
 namespace Assignment1
 {
@@ -21,6 +23,8 @@ namespace Assignment1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSingleton<IFamilyService, FamilyJSONImplementation>();
+            services.AddScoped<BrowserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

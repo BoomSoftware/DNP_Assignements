@@ -1,0 +1,41 @@
+﻿@using Models
+@inject BrowserService BrowserService
+
+
+<div class="background" @onmousemove=MoveObject>
+@*      @if (movableImages.Capacity != 0 && movableImages.Capacity != 1) *@
+@*         { *@
+@*             <svg width="100%" height="100%" style="position: absolute;"><line x1="@movableImages[0].MovableItem.GetCenteredX()" y1="@movableImages[0].MovableItem.GetCenteredY()" x2="@movableImages[1].MovableItem.GetCenteredX()" y2="@movableImages[1].MovableItem.GetCenteredY()" stroke="white"/></svg> *@
+@*         } *@
+    <CascadingValue Value=@this>
+        @ChildContent
+    </CascadingValue>
+</div>
+
+@code {
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    public int Height { get; set; }
+    public int Width { get; set; }
+
+    private List<MovableImage> movableImages = new List<MovableImage>();
+
+    public void MoveObject(MouseEventArgs args)
+    {
+        foreach (var movableImage in movableImages){
+            movableImage.MovableItem.MoveElement(args.ClientX, args.ClientY);
+        }
+    }
+    
+    public void AddMovableImageChild(MovableImage movableImage){
+        movableImages.Add(movableImage);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var dimension = await BrowserService.GetDimensions();
+        Height = dimension.Height;
+        Width = dimension.Width;
+    }
+
+}

@@ -1,0 +1,46 @@
+﻿@page "/FamilyTree"
+@page "/FamilyTree/{familyaddress}"
+@using Models
+@inject IFamilyService FamilyService;
+
+<AnimatedBackground>
+    
+    @if (selectedFamily == null) 
+    {
+        <p>
+            <em>Loading...</em>
+        </p>
+    } 
+    else
+    {
+        string adultImgPath ="";
+        for (var i = 0; i < selectedFamily.Adults.Count; i++)
+        {
+            if (selectedFamily.Adults[i].Sex.Equals("F"))
+                adultImgPath = "img/avatars/mother.png";
+            else
+                adultImgPath = "img/avatars/father1.png";
+            <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Adults[i]"/>
+        }
+    }
+    @* <MovableImage ImgPath="img/avatars/child-boy1.png" DefaultX="500" DefaultY="300" ItemWidth="100" ItemHeight="100"/> *@
+    @*  <MovableImage ImgPath="img/avatars/mother.png" DefaultX="1000" DefaultY="500" ItemWidth="100" ItemHeight="100" ItemSpeed="0.8" Animate="FadeIn"/> *@
+</AnimatedBackground>
+
+@code
+{
+    [Parameter] public string FamilyAddress { get; set;}
+
+    private Family selectedFamily;
+
+    protected override void OnInitialized()
+    {
+        foreach (var family in FamilyService.GetAllFamilies())
+        {
+            string address = family.StreetName +" "+ family.HouseNumber;
+            if (address.Equals(FamilyAddress)){
+                selectedFamily = family;
+            }
+        }
+    }
+}
