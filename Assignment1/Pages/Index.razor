@@ -38,6 +38,7 @@
      protected override void OnInitialized()
      {
          families = FamilyService.GetAllFamilies();
+         address = families[0].StreetName + " " + families[0].HouseNumber;
      }
 
      public void GoToFamilyTree()
