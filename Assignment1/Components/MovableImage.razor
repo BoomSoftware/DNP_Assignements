@@ -1,0 +1,62 @@
+﻿@using Models
+@using System.Reflection.Metadata
+@using System.Diagnostics.CodeAnalysis
+
+<img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onmouseover=DisplayPersonInfo/>
+<div>
+    @personInfo
+</div>
+
+
+@code {
+    [Parameter] public string ImgPath { get; set;}
+    [Parameter] public double DefaultX { get; set; }
+    [Parameter] public double DefaultY { get; set; }
+    [Parameter] public string StyleID { get; set; }
+    [Parameter] public double ItemSpeed { get; set; }
+    [Parameter] public string Animate { get; set; }
+    [Parameter] public double ItemWidth { get; set; }
+    [Parameter] public double ItemHeight { get; set; }
+    [Parameter] public Person Person { get; set; }
+
+    private string personInfo;
+    
+    public MovableItem MovableItem { get; set; }
+    [CascadingParameter] public AnimatedBackground ParentComponent { get; set; }
+
+    private string css => $"top: {MovableItem.Y}px; " +
+                          $"left: {MovableItem.X}px;" +
+                          $"opacity: {MovableItem.Opacity};" +
+                          $"width: {MovableItem.Width}px;" +
+                          $"height: {MovableItem.Height}px;";
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+            MovableItem = new MovableItem();
+                MovableItem.X = DefaultX;
+                MovableItem.Y = DefaultY;
+                MovableItem.Height = ItemHeight;
+                MovableItem.Width = ItemWidth;
+                MovableItem.Opacity = 1;
+        
+                if(ItemSpeed != null && ItemSpeed != 0)
+                    MovableItem.Speed = ItemSpeed;
+        
+                MovableItem.Event += (o, e) => StateHasChanged();
+        
+                ParentComponent.AddMovableImageChild(this);
+        //await MovableItem.AnimateItem("FadeIn");
+    }
+
+    private void DisplayPersonInfo()
+    {
+        personInfo = "First Name: " + Person.FirstName + "\n" +
+                     "Last Name: " + Person.LastName + "\n" +
+                     "Sex: " + Person.Sex + "\n" ;
+    }
+    
+    
+
+
+}
