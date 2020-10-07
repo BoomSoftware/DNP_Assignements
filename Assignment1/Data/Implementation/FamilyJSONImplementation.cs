@@ -15,5 +15,10 @@ namespace Assignment1.Data.Implementation
             string content = File.ReadAllText(jsonFile);
             return JsonSerializer.Deserialize<List<Family>>(content);
         }
+
+        public void WriteAllFamilies(IList<Family> families)
+        {
+            
+        }
     }
 }
