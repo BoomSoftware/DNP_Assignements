@@ -1,20 +1,33 @@
 ﻿@using Models
+@using Assignment1.Pages
+@inject IModalService Modal
+
 <div class="user-box" style="@css">
-    <h3>@username</h3>
-    <br /> 
-    <p>
-        @userDescription
-    </p>
-    
-    
-    <button type="button" @onclick=buttonClicked>Select</button>
+    <div class="content">
+        <h2>@Symbol</h2>
+        <h3>@username</h3>
+        <p>
+            @userDescription
+        </p>
+        @if (Person.Equals("Administrator") || Person.Equals("RegularUser")){
+            <a @onclick="@(() => Modal.Show<LoginPage>("Login"))" class="btn btn-primary">View </a>
+        }
+    </div>
 </div>
 
 @code {
 
     private string css => $"border: {borders};";
-    
+    private string[] bordersStyle = new[]
+    {
+        "background: linear-gradient(315deg, #ff0057, #e64a19)",
+        "background: linear-gradient(315deg, #89ff00, #00bcd4)",
+        "background: linear-gradient(315deg, #e91e63, #5d02ff)",
+        "background: linear-gradient(315deg, #ff0000, #ffc107)"
+    };
+
     [Parameter] public string Person { get; set; }
+    [Parameter] public string Symbol { get; set; }
 
     private string username;
     private string userImagePath;
@@ -45,7 +58,7 @@
 
     public void buttonClicked()
     {
-        borders = "3px solid green";
+        //borders = "3px solid green";
     }
 
 }

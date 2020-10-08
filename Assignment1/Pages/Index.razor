@@ -2,65 +2,56 @@
 @using Models
 @inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
-<div class="form-group">
-    <div class="title-box">
-        <h3>Select Family Address</h3>
-        <select @bind="address" @onclick=DisplayUsers>
-            @foreach (Family family in families)
-            {
-                <option>@family.StreetName @family.HouseNumber</option>
-            }
-        </select>
-    </div>
 
-
-    @if (selectedFamily != null)
-    {
-    
-    <div class="container d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md"><UserBox Person="Administrator"/></div>
-            <div class="col-md"><UserBox Person="RegularUser"/></div>
-            <div class="col-md"><UserBox Person="Visitor"/></div>
-        </div>
-    </div>
-    }
-    <button type="button" @onclick=GoToFamilyTree>Open Family</button>
+<div class="container">
+    <UserBox Person="Administrator" Symbol="👑"/>
+    <UserBox Person="RegularUser" Symbol="👤"/>
+    <UserBox Person="Visitor" Symbol="🔎"/>
 </div>
 
+@*     <div class="title-box"> *@
+@*         <h3>Select Family Address</h3> *@
+@*         <select @bind="address" @onclick=DisplayUsers> *@
+@*             @foreach (Family family in families) *@
+@*             { *@
+@*                 <option>@family.StreetName @family.HouseNumber</option> *@
+@*             } *@
+@*         </select> *@
+@*     </div> *@
+@* *@
+@*     <button type="button" @onclick=GoToFamilyTree>Open Family</button> *@
 @code
 {
-     private IList<Family> families;
-     private string address;
-     private Family selectedFamily;
-     private bool usersComponents;
+    private IList<Family> families;
+    private string address;
+    private Family selectedFamily;
+    private bool usersComponents;
 
-     protected override void OnInitialized()
-     {
-         families = FamilyService.GetAllFamilies();
-     }
+    protected override void OnInitialized()
+    {
+        families = FamilyService.GetAllFamilies();
+    }
 
-     public void GoToFamilyTree()
-     {
-         NavigationManager.NavigateTo("/FamilyTree/" + address);
-     }
+    public void GoToFamilyTree()
+    {
+        NavigationManager.NavigateTo("/FamilyTree/" + address);
+    }
 
-     public void DisplayUsers()
-     {
-         if (address != null)
-         {
-             foreach (var family in families)
-             {
-                 if (address.Equals(family.StreetName + " " + family.HouseNumber))
-                 {
-                     selectedFamily = family;
-                 }
-             }
-         }
+    public void DisplayUsers()
+    {
+        if (address != null)
+        {
+            foreach (var family in families)
+            {
+                if (address.Equals(family.StreetName + " " + family.HouseNumber))
+                {
+                    selectedFamily = family;
+                }
+            }
+        }
 
-         if (selectedFamily != null)
-             usersComponents = true;
-     }
+        if (selectedFamily != null)
+            usersComponents = true;
+    }
 
 }
-
