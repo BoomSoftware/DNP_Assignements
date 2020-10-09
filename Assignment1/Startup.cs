@@ -23,7 +23,7 @@ namespace Assignment1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<IFamilyService, FamilyJSONImplementation>();
+            services.AddSingleton<IFamilyService, FamilyJsonImplementation>();
             services.AddScoped<BrowserService>();
         }
 
