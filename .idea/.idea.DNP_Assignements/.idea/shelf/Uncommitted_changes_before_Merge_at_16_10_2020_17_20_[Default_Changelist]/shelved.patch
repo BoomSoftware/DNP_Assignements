@@ -1,0 +1,61 @@
+Index: Assignment1/Pages/Index.razor
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@page \"/\"\r\n@using Models\r\n@inject IFamilyService FamilyService\r\n@inject NavigationManager NavigationManager\r\n<div class=\"form-group\">\r\n    <div class=\"title-box\">\r\n        <h3>Select Family Address</h3>\r\n        <select @bind=\"address\" @onclick=DisplayUsers>\r\n            @foreach (Family family in families)\r\n            {\r\n                <option>@family.StreetName @family.HouseNumber</option>\r\n            }\r\n        </select>\r\n    </div>\r\n\r\n\r\n    @if (selectedFamily != null)\r\n    {\r\n    \r\n    <div class=\"container d-flex justify-content-center\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md\"><UserBox Person=\"Administrator\"/></div>\r\n            <div class=\"col-md\"><UserBox Person=\"RegularUser\"/></div>\r\n            <div class=\"col-md\"><UserBox Person=\"Visitor\"/></div>\r\n        </div>\r\n    </div>\r\n    }\r\n    <button type=\"button\" @onclick=GoToFamilyTree>Open Family</button>\r\n</div>\r\n\r\n@code\r\n{\r\n     private IList<Family> families;\r\n     private string address;\r\n     private Family selectedFamily;\r\n     private bool usersComponents;\r\n\r\n     protected override void OnInitialized()\r\n     {\r\n         families = FamilyService.GetAllFamilies();\r\n         address = families[0].StreetName + \" \" + families[0].HouseNumber;\r\n     }\r\n\r\n     public void GoToFamilyTree()\r\n     {\r\n         NavigationManager.NavigateTo(\"/FamilyTree/\" + address);\r\n     }\r\n\r\n     public void DisplayUsers()\r\n     {\r\n         if (address != null)\r\n         {\r\n             foreach (var family in families)\r\n             {\r\n                 if (address.Equals(family.StreetName + \" \" + family.HouseNumber))\r\n                 {\r\n                     selectedFamily = family;\r\n                 }\r\n             }\r\n         }\r\n\r\n         if (selectedFamily != null)\r\n             usersComponents = true;\r\n     }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assignment1/Pages/Index.razor	(revision feb6c8e822609490813865967e99f2f72c3e1457)
++++ Assignment1/Pages/Index.razor	(date 1602758524782)
+@@ -38,7 +38,7 @@
+      protected override void OnInitialized()
+      {
+          families = FamilyService.GetAllFamilies();
+-         address = families[0].StreetName + " " + families[0].HouseNumber;
++         address = FormatFamilyAddress(families[0]);
+      }
+ 
+      public void GoToFamilyTree()
+@@ -52,7 +52,7 @@
+          {
+              foreach (var family in families)
+              {
+-                 if (address.Equals(family.StreetName + " " + family.HouseNumber))
++                 if (address.Equals(FormatFamilyAddress(family)))
+                  {
+                      selectedFamily = family;
+                  }
+@@ -63,5 +63,10 @@
+              usersComponents = true;
+      }
+ 
++    private string FormatFamilyAddress(Family family)
++    {
++        return family.StreetName + " " + family.HouseNumber;
++    }
++
+ }
+ 
+Index: Assignment1/Program.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\r\nusing System.Collections.Generic;\r\nusing System.IO;\r\nusing System.Linq;\r\nusing System.Threading.Tasks;\r\nusing Microsoft.AspNetCore;\r\nusing Microsoft.AspNetCore.Hosting;\r\nusing Microsoft.Extensions.Configuration;\r\nusing Microsoft.Extensions.Hosting;\r\nusing Microsoft.Extensions.Logging;\r\n\r\nnamespace Assignment1\r\n{\r\n    public class Program\r\n    {\r\n        public static void Main(string[] args)\r\n        {\r\n            CreateHostBuilder(args).Build().Run();\r\n        }\r\n\r\n        public static IHostBuilder CreateHostBuilder(string[] args) =>\r\n            Host.CreateDefaultBuilder(args)\r\n                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assignment1/Program.cs	(revision feb6c8e822609490813865967e99f2f72c3e1457)
++++ Assignment1/Program.cs	(date 1602138477869)
+@@ -1,13 +1,5 @@
+-using System;
+-using System.Collections.Generic;
+-using System.IO;
+-using System.Linq;
+-using System.Threading.Tasks;
+-using Microsoft.AspNetCore;
+ using Microsoft.AspNetCore.Hosting;
+-using Microsoft.Extensions.Configuration;
+ using Microsoft.Extensions.Hosting;
+-using Microsoft.Extensions.Logging;
+ 
+ namespace Assignment1
+ {
