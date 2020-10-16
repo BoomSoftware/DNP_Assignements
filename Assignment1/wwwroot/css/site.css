@@ -1,8 +1,15 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+html{}
 
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    height:100%;
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #060c21;
 }
 
 a, .btn-link {
@@ -31,13 +38,13 @@ app {
     flex: 1;
 }
 
-    .main .top-row {
+.main .top-row {
         background-color: #f7f7f7;
         border-bottom: 1px solid #d6d5d5;
         justify-content: flex-end;
     }
 
-        .main .top-row > a, .main .top-row .btn-link {
+.main .top-row > a, .main .top-row .btn-link {
             white-space: nowrap;
             margin-left: 1.5rem;
         }
@@ -51,35 +58,35 @@ app {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }
 
-    .sidebar .top-row {
+.sidebar .top-row {
         background-color: rgba(0,0,0,0.4);
     }
 
-    .sidebar .navbar-brand {
+.sidebar .navbar-brand {
         font-size: 1.1rem;
     }
 
-    .sidebar .oi {
+.sidebar .oi {
         width: 2rem;
         font-size: 1.1rem;
         vertical-align: text-top;
         top: -2px;
     }
 
-    .sidebar .nav-item {
+.sidebar .nav-item {
         font-size: 0.9rem;
         padding-bottom: 0.5rem;
     }
 
-        .sidebar .nav-item:first-of-type {
+.sidebar .nav-item:first-of-type {
             padding-top: 1rem;
         }
 
-        .sidebar .nav-item:last-of-type {
+.sidebar .nav-item:last-of-type {
             padding-bottom: 1rem;
         }
 
-        .sidebar .nav-item a {
+.sidebar .nav-item a {
             color: #d7d7d7;
             border-radius: 4px;
             height: 3rem;
@@ -88,12 +95,12 @@ app {
             line-height: 3rem;
         }
 
-            .sidebar .nav-item a.active {
+.sidebar .nav-item a.active {
                 background-color: rgba(255,255,255,0.25);
                 color: white;
             }
 
-            .sidebar .nav-item a:hover {
+.sidebar .nav-item a:hover {
                 background-color: rgba(255,255,255,0.1);
                 color: white;
             }
@@ -203,13 +210,108 @@ app {
     transform: scale(1.5);
 }
 
+
+.user-box:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    transform: skew(2deg,2deg);
+    z-index: -1;
+}
+
+.user-box:nth-child(1):before{
+    background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+.user-box:nth-child(2):before{
+    background: linear-gradient(315deg, #89ff00, #00bcd4);
+}
+.user-box:nth-child(3):before{
+    background: linear-gradient(315deg, #e91e63, #5d02ff);
+}
+
+.user-box:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+}
 .user-box{
-    width: 250px;
-    height: 300px;
-    border-radius: 5%;
-    border: 1px solid black;
-    text-align: center;
-    padding: 10px;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #060c21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+
+.user-box .content{
+    position: relative;
+    padding: 20px;
+    transform: translateY(40px);
+}
+
+.user-box .content h2{
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: rgba(255,255,255,.08);
+    transition: 0.5s;
+}
+
+.user-box:hover .content h2 {
+    top: -140px;
+}
+
+.user-box .content h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.user-box .content p {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.user-box .content a {
+    position: relative;
+    margin: 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    color: #ffffff;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.user-box:hover .content a{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+} 
+
+.user-box .content a:hover{
+    color: #000;
+    background: #ffffff;
 }
 
 .title-box{
@@ -221,6 +323,14 @@ app {
 
 .form-group{
     width: 100%;
+}
+
+.container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 0 40px;
 }
 
 
