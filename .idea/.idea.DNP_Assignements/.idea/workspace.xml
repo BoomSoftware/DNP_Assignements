@@ -22,15 +22,32 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:privilegies" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/homepageupdate" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="feccad72-eb34-48c7-84fe-367b5cafb7ac" name="Default Changelist" comment="Pushing test stuff from jsonconnection">
+      <change afterPath="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/Data/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/Models/FamilyModels/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/Validation/CustomValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/wwwroot/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment1/wwwroot/json/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/App.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment1/Components/UserBox.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/UserBox.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONImplementation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/LoginPage.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/_Imports.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,13 +92,6 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -90,8 +100,28 @@
         <option value="$PROJECT_DIR$/Assignment1/Program.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Components/AnimatedBackground.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Data/BrowserService.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Pages/Index.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/_Host.cshtml" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/Custom.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Models/User.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Models/User/User.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/wwwroot/css/login.css" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/LoginPage.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/MovableImage.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/User.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Startup.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/App.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/_Imports.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Validation/CustomValidator.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Data/IUserService.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONManager.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/wwwroot/css/site.css" />
         <option value="$PROJECT_DIR$/Assignment1/Components/UserBox.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/wwwroot/json/users.json" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/Index.razor" />
       </list>
     </option>
   </component>
@@ -154,7 +184,8 @@
       <workItem from="1602241555811" duration="3127000" />
       <workItem from="1602751179367" duration="5770000" />
       <workItem from="1602763086285" duration="734000" />
-      <workItem from="1602861518065" duration="401000" />
+      <workItem from="1602861518065" duration="15507000" />
+      <workItem from="1602923007046" duration="17466000" />
     </task>
     <task id="LOCAL-00001" summary="I tried to add branches">
       <created>1602066035770</created>
@@ -189,7 +220,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="privilegies" />
+                        <option value="origin/homepageupdate" />
                       </list>
                     </value>
                   </entry>
@@ -213,22 +244,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602861919366" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602754805543">
+    <state width="914" height="276" key="GridCell.Tab.0.bottom" timestamp="1602946005853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602754805543" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602754805541">
+    <state width="914" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602946005853" />
+    <state width="914" height="276" key="GridCell.Tab.0.center" timestamp="1602946005853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602754805541" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602754805541">
+    <state width="914" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602946005853" />
+    <state width="914" height="276" key="GridCell.Tab.0.left" timestamp="1602946005853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602754805541" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602754805541">
+    <state width="914" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602946005853" />
+    <state width="914" height="276" key="GridCell.Tab.0.right" timestamp="1602946005853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602754805541" />
+    <state width="914" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602946005853" />
     <state x="184" y="86" key="MergeDialog" timestamp="1602861657441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -237,10 +268,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602861651706" />
+    <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size" timestamp="1602923945149">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1602923945149" />
+    <state x="190" y="202" key="RiderGenerateDialog" timestamp="1602926694601">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="190" y="202" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602926694601" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602066086058">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602066086058" />
+    <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog" timestamp="1602926379689">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602926379689" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602066316317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -253,5 +296,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="721" y="234" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602861606604" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1602935972566">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602935972566" />
   </component>
 </project>

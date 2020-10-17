@@ -10,9 +10,13 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Assignment1.csproj" t="IncludeRecursive" />
+        <e p="Authentication" t="Include">
+          <e p="CustomAuthenticationStateProvider.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Components" t="Include">
           <e p="AnimatedBackground.razor" t="Include" />
+          <e p="LoginPage.razor" t="Include" />
           <e p="MovableImage.razor" t="Include" />
           <e p="UserBox.razor" t="Include" />
         </e>
@@ -20,8 +24,10 @@
           <e p="BrowserService.cs" t="Include" />
           <e p="IFamilyService.cs" t="Include" />
           <e p="Implementation" t="Include">
-            <e p="FamilyJSONImplementation.cs" t="Include" />
+            <e p="FamilyJSONManager.cs" t="Include" />
+            <e p="UserJSONManager.cs" t="Include" />
           </e>
+          <e p="IUserService.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ComponentModels" t="Include">
@@ -36,6 +42,7 @@
             <e p="Interest.cs" t="Include" />
             <e p="Person.cs" t="Include" />
             <e p="Pet.cs" t="Include" />
+            <e p="User.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -51,7 +58,6 @@
           <e p="Error.cshtml" t="Include" />
           <e p="FamilyTree.razor" t="Include" />
           <e p="Index.razor" t="Include" />
-          <e p="LoginPage.razor" t="Include" />
         </e>
         <e p="Persistence" t="Include">
           <e p="FileContext.cs" t="Include" />
@@ -65,12 +71,16 @@
           <e p="NavMenu.razor" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="Validation" t="Include">
+          <e p="CustomValidator.cs" t="Include" />
+        </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
             <e p="bootstrap" t="Include">
               <e p="bootstrap.min.css" t="Include" />
               <e p="bootstrap.min.css.map" t="Include" />
             </e>
+            <e p="login.css" t="Include" />
             <e p="open-iconic" t="Include">
               <e p="font" t="Include">
                 <e p="css" t="Include">
@@ -109,6 +119,7 @@
           <e p="json" t="Include">
             <e p="adults.json" t="Include" />
             <e p="families.json" t="Include" />
+            <e p="users.json" t="Include" />
           </e>
         </e>
       </e>

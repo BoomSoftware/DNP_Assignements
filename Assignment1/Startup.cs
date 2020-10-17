@@ -1,3 +1,4 @@
+using Assignment1.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Assignment1.Data;
 using Assignment1.Data.Implementation;
 using Blazored.Modal;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Assignment1
 {
@@ -22,12 +24,20 @@ namespace Assignment1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddBlazoredModal();
+            services.AddBlazoredModal();
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<IFamilyService, FamilyJsonImplementation>();
+            services.AddSingleton<IFamilyService, FamilyJsonManager>();
             services.AddScoped<BrowserService>();
-           
+            services.AddBlazoredModal();
+            services.AddScoped<IUserService, UserJSONManager>();
+            services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeAdministrator", a =>
+                    a.RequireAuthenticatedUser().RequireClaim("SecurityLevel", "Administrator"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

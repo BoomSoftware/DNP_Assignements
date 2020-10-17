@@ -3,25 +3,41 @@
 @inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
 
-<div class="container">
-    <UserBox Person="Administrator" Symbol="👑"/>
-    <UserBox Person="RegularUser" Symbol="👤"/>
-    <UserBox Person="Visitor" Symbol="🔎"/>
-</div>
+       
 
-@*     <div class="title-box"> *@
-@*         <h3>Select Family Address</h3> *@
-@*         <select @bind="address" @onclick=DisplayUsers> *@
-@*             @foreach (Family family in families) *@
-@*             { *@
-@*                 <option>@family.StreetName @family.HouseNumber</option> *@
-@*             } *@
-@*         </select> *@
-@*     </div> *@
-@* *@
-@*     <button type="button" @onclick=GoToFamilyTree>Open Family</button> *@
+ @if (!canView)
+{ 
+    <div class="container">
+        <UserBox Person="Administrator" Symbol="👑" @bind-CssString="@cssString" @bind-CssRegisterString="@cssRegisterString"/>
+        <UserBox Person="RegularUser" Symbol="👤" @bind-CssString="@cssString" @bind-CssRegisterString="@cssRegisterString"/>
+        <UserBox Person="Visitor" Symbol="🔎" @bind-IsVisitor="@canView"/>
+    </div>
+    <LoginPage @bind-CssClass="@cssString" @bind-CssRegisterString="@cssRegisterString"/>
+    PlsWork();
+}
+
+@if(canView)
+    {
+        <div class="title-box" style="background-color: white; border: 5px solid black;">
+            <h3>Select Family Address</h3>
+             <select @bind="address" @onclick=DisplayUsers>
+                 @foreach (Family family in families)
+                 {
+                     <option>@family.StreetName @family.HouseNumber</option>
+                 }
+             </select>
+        </div>
+        <button type="button" @onclick=GoToFamilyTree>Open Family</button>
+    }
 @code
 {
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; }
+    
+    private string cssString = "hide";
+    private string cssRegisterString;
+    private bool canView;
+
     private IList<Family> families;
     private string address;
     private Family selectedFamily;
@@ -53,5 +69,15 @@
         if (selectedFamily != null)
             usersComponents = true;
     }
-
+    
+    private void PlsWork()
+    {
+        Console.WriteLine("Pls work got called");
+        bool oldCanView = canView;
+        canView = AuthenticationStateTask.Result.User.Identity.IsAuthenticated;
+        if (oldCanView != canView)
+        {
+            StateHasChanged();
+        }
+    }
 }

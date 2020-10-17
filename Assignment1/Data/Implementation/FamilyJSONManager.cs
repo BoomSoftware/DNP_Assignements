@@ -7,7 +7,7 @@ using Models;
 
 namespace Assignment1.Data.Implementation
 {
-    public class FamilyJsonImplementation : IFamilyService
+    public class FamilyJsonManager : IFamilyService
     {
         private readonly string jsonFile = "wwwroot/json/families.json";
 
@@ -17,7 +17,6 @@ namespace Assignment1.Data.Implementation
             string content = File.ReadAllText(jsonFile);
             return JsonSerializer.Deserialize<List<Family>>(content);
         }
-
 
         public void CreateFamily(Family family)
         {
