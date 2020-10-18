@@ -39,8 +39,8 @@ public class Person {
 
 public class ValidHairColor : ValidationAttribute {
     protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
-        List<string> valid = new[] {"blond", "red", "brown", "black",
-            "white", "grey", "blue", "green", "leverpostej"}.ToList();
+        List<string> valid = new[] {"Blond", "Red", "Brown", "Black",
+            "White", "Grey", "Blue", "Green", "Leverpostej"}.ToList();
         if (valid == null || valid.Contains(value.ToString().ToLower())) {
             return ValidationResult.Success;
         }
@@ -50,8 +50,8 @@ public class ValidHairColor : ValidationAttribute {
 
 public class ValidEyeColor : ValidationAttribute {
     protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
-        List<string> valid = new[] {"brown", "grey", "green", "blue",
-            "amber", "hazel"}.ToList();
+        List<string> valid = new[] {"Brown", "Grey", "Green", "Blue",
+            "Amber", "Hazel"}.ToList();
         if (valid != null && valid.Contains(value.ToString().ToLower())) {
             return ValidationResult.Success;
         }

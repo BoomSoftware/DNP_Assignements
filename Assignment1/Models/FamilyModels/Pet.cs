@@ -9,5 +9,12 @@ public class Pet {
     public string Name { get; set; }
     [Required]
     public int Age { get; set; }
+    
+    public void Update(Pet pet)
+    {
+        Species = pet.Species;
+        Name = pet.Name;
+        Age = pet.Age;
+    }
 }
 }

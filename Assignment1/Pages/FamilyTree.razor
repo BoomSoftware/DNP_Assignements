@@ -2,45 +2,80 @@
 @page "/FamilyTree/{familyaddress}"
 @using Models
 @inject IFamilyService FamilyService;
+@inject NavigationManager NavigationManager
+
 
 <AnimatedBackground>
-    
-    @if (selectedFamily == null) 
+
+    @if (selectedFamily == null)
     {
         <p>
             <em>Loading...</em>
         </p>
-    } 
+    }
     else
     {
-        string adultImgPath ="";
+        string adultImgPath = "";
         for (var i = 0; i < selectedFamily.Adults.Count; i++)
         {
             if (selectedFamily.Adults[i].Sex.Equals("F"))
                 adultImgPath = "img/avatars/mother.png";
             else
                 adultImgPath = "img/avatars/father1.png";
-            <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Adults[i]"/>
+            <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Adults[i]" Family="@selectedFamily"/>
         }
+        
+        for(var i = 0; i < selectedFamily.Pets.Count; i++)
+        {
+            <MovableImage ImgPath="img/avatars/planet1.png" ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Pet="@selectedFamily.Pets[i]" Family="@selectedFamily"/>
+        }
+        
+        for (var i = 0; i < selectedFamily.Children.Count; i++)
+        {
+            if (selectedFamily.Children[i].Sex.Equals("F"))
+                adultImgPath = "img/avatars/child-girl1.png";
+            else
+                adultImgPath = "img/avatars/child-boy1.png";
+            <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Children[i]" Family="@selectedFamily"/>
+        }
+        
+        
+        <select @bind="memberType">
+            <option>Adult</option>
+            <option>Child</option>
+            <option>Pet</option>
+        </select>
+        <button type="button" @onclick=AddNewMember>Add member</button>
     }
     @* <MovableImage ImgPath="img/avatars/child-boy1.png" DefaultX="500" DefaultY="300" ItemWidth="100" ItemHeight="100"/> *@
     @*  <MovableImage ImgPath="img/avatars/mother.png" DefaultX="1000" DefaultY="500" ItemWidth="100" ItemHeight="100" ItemSpeed="0.8" Animate="FadeIn"/> *@
 </AnimatedBackground>
+
 
 @code
 {
     [Parameter] public string FamilyAddress { get; set;}
 
     private Family selectedFamily;
+    private bool addingView;
+    private string memberType = "Adult";
+    private string address;
 
     protected override void OnInitialized()
     {
+        addingView = false;
+
         foreach (var family in FamilyService.GetAllFamilies())
         {
-            string address = family.StreetName +" "+ family.HouseNumber;
+            address = family.StreetName +" "+ family.HouseNumber;
             if (address.Equals(FamilyAddress)){
                 selectedFamily = family;
             }
         }
+    }
+
+    public void AddNewMember()
+    {
+        NavigationManager.NavigateTo("/modifyMember/"+FamilyAddress+"/Add/"+memberType);
     }
 }

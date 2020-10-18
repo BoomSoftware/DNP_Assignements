@@ -1,0 +1,74 @@
+﻿@page "/ModifyMember"
+@page "/ModifyMember/{familyaddress}/{actiontype}/{membertype}/{id}"
+@page "/ModifyMember/{familyaddress}/{actiontype}/{membertype}"
+
+@using Models
+@inject IFamilyService FamilyService;
+
+
+@if (ActionType.Equals("Edit") && MemberType.Equals("Pet"))
+{
+    <PetEditForm Pet="@selectedPet" Family="@selectedFamily"></PetEditForm>
+}
+
+@if (ActionType.Equals("Edit") && (MemberType.Equals("Adult") || MemberType.Equals("Child")))
+{
+    <AdultEditForm Adult="selectedPerson" Family="selectedFamily"></AdultEditForm>
+}
+
+@if (ActionType.Equals("Add"))
+{
+    <AddNewAdultBox Family="selectedFamily" MemberType="@MemberType"></AddNewAdultBox>
+}
+
+
+@code {
+    [Parameter] public string FamilyAddress { get; set;}
+    [Parameter] public string ActionType { get; set;}
+    [Parameter] public string MemberType { get; set;}
+    [Parameter] public string Id { get; set;}
+
+    private string address;
+    private Family selectedFamily;
+    private Person selectedPerson;
+    private Pet selectedPet;
+    
+    
+    protected override void OnInitialized()
+    {
+        foreach (var family in FamilyService.GetAllFamilies())
+        {
+            address = family.StreetName +" "+ family.HouseNumber;
+            if (address.Equals(FamilyAddress)){
+                selectedFamily = family;
+                if (MemberType.Equals("Adult") && Id != null)
+                {
+                    foreach (var adult in family.Adults)
+                    {
+                        if (adult.Id == Int32.Parse(Id))
+                            selectedPerson = adult;
+                    }
+                }
+
+                if (MemberType.Equals("Pet") && Id != null)
+                {
+                    foreach (var pet in family.Pets)
+                    {
+                        if (pet.Id == Int32.Parse(Id))
+                            selectedPet = pet;
+                    }
+                }
+
+                if (MemberType.Equals("Child") && Id != null)
+                {
+                    foreach (var child in family.Children)
+                    {
+                        if (child.Id == Int32.Parse(Id))
+                            selectedPerson = child;
+                    }
+                }
+            }
+        }
+    }
+    
+}
