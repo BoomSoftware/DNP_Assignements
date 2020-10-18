@@ -1,0 +1,32 @@
+﻿@page "/charts"
+@inject IFamilyService FamilyService
+
+<SfAccumulationChart Title="Adults Eye Color">
+     <AccumulationChartSeriesCollection>
+         <AccumulationChartSeries DataSource="@statisticsDetails" XName="EyeColor" YName="Number">
+                                     @* Name="WhatIsThis"> *@
+         </AccumulationChartSeries>
+        </AccumulationChartSeriesCollection>
+    
+        <AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+</SfAccumulationChart>
+
+@code 
+{
+    private class Statistics
+    {
+        public string EyeColor { get; set; }
+        public int Number { get; set; }
+    }
+    private List<Statistics> statisticsDetails;
+
+    protected override void OnInitialized()
+    {
+        statisticsDetails = new List<Statistics>();
+        Dictionary<string,int> dictionary = FamilyService.GetNumberOfAdultsByEyeColor();
+        foreach (var value in dictionary)
+        {
+            statisticsDetails.Add(new Statistics {EyeColor = value.Key, Number = value.Value});
+        }
+    }
+}

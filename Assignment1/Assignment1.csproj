@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <PackageReference Include="Blazored.Modal" Version="5.1.0" />
+      <PackageReference Include="Syncfusion.Blazor" Version="18.3.0.35" />
     </ItemGroup>
 
 </Project>

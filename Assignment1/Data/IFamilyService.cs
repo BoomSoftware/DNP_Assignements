@@ -11,5 +11,6 @@ namespace Assignment1.Data
         void CreateFamily(Family family);
         void UpdateFamily(Family family);
         void DeleteFamily(Family family);
+        Dictionary<string, int> GetNumberOfAdultsByEyeColor();
     }
 }

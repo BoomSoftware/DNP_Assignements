@@ -1,0 +1,64 @@
+﻿@page "/addPerson"
+@using Models
+
+<EditForm Model="@person" OnValidSubmit="@SubmitNewPerson" class="p-3 border-primary" style="background-color: white;">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    First Name:<br/>
+    <InputText @bind-Value="@person.FirstName"/> <br/>
+    Last Name:<br/>
+    <InputText @bind-Value="@person.LastName"/> <br/>
+    Age:<br/>
+    <InputNumber @bind-Value="@person.Age"/> <br/>  
+    Weigth:<br/>
+    <InputNumber @bind-Value="@person.Weight"/> <br/>     
+    Height:<br/>
+    <InputNumber @bind-Value="@person.Height"/> <br/>  
+    Eye Color:<br/>
+    <InputSelect @bind-Value="@person.EyeColor"> 
+        <option value="Select" selected disabled="disabled">Select Eye Color</option> 
+        @foreach (var eyeColor in validEyeColors)
+        {
+            <option value="@eyeColor">@eyeColor</option>
+        }          
+    </InputSelect>
+    <br/> Hair Color:<br/>
+    <InputSelect @bind-Value="@person.HairColor"> 
+        <option value="Select" selected disabled="disabled">Select Hair Color</option> 
+        @foreach (var hairColor in validHairColors)
+        {
+            <option value="@hairColor">@hairColor</option>
+        }          
+    </InputSelect>   
+    <br/> Sex:<br/>
+    <InputSelect @bind-Value="@person.Sex">
+        <option value="Select" selected disabled="disabled">Select Sex</option>
+        <option value="M">M</option>
+        <option value="F">F</option>
+    </InputSelect>
+    <br/>
+    <p class="actions">
+                <button class="btn btn-outline-dark mt-3" type="submit">Create</button>
+     </p>
+</EditForm>
+
+@code {
+    private Person person = new Person();
+
+    private List<string> validEyeColors = new List<string>
+    {
+        "Brown", "Grey", "Green", "Blue", "Amber", "Hazel"
+    };
+
+    private List<string> validHairColors = new List<string>
+    {
+        "Blonde", "Red", "Brown", "Black", "White", "Grey", "Blue", "Green", "Leverpostej"
+    };
+
+    private void SubmitNewPerson()
+    {
+        Console.WriteLine("New valid person submitted " +
+                          $"{person.FirstName} {person.LastName} {person.Age} {person.Height} {person.Sex} {person.Weight} {person.EyeColor} {person.HairColor}");
+    }
+
+}

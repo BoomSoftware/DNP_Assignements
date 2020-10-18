@@ -1,0 +1,36 @@
+﻿@using Models
+@page "/addPet"
+
+<EditForm Model="@pet" OnValidSubmit="@SubmitNewPet" class="p-3 border-primary" style="background-color: white;">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    Name:<br/>
+    <InputText @bind-Value="@pet.Name"/> <br/>
+    Age:<br/>
+    <InputNumber @bind-Value="@pet.Age"/> <br/>
+    Species:<br/>
+    <InputSelect @bind-Value="@pet.Species">
+        <option value="Select" selected disabled="disabled">Select Species</option> 
+        @foreach (var species in validSpecies)
+        {
+            <option value="@species">@species</option>
+        }  
+    </InputSelect>
+     <p class="actions">
+            <button class="btn btn-outline-dark mt-3" type="submit">Create</button>
+     </p>
+</EditForm>
+
+@code {
+    private Pet pet = new Pet();
+    private List<string> validSpecies = new List<string>
+    {
+        "Dog", "Cat", "Hamster", "Owl", "Snake", "Otter", "Budgerigar"
+    };
+
+    private void SubmitNewPet()
+    {
+        Console.WriteLine($"New valid pet submitted {pet.Name} {pet.Age} {pet.Species}");
+    }
+
+}
