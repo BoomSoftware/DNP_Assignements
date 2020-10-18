@@ -1,8 +1,9 @@
 ﻿@page "/FamilyTree"
 @page "/FamilyTree/{familyaddress}"
 @using Models
-@inject IFamilyService FamilyService;
+@inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
+@inject BrowserService BrowserService
 
 
 <AnimatedBackground>
@@ -24,12 +25,12 @@
                 adultImgPath = "img/avatars/father1.png";
             <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Adults[i]" Family="@selectedFamily"/>
         }
-        
-        for(var i = 0; i < selectedFamily.Pets.Count; i++)
+
+        for (var i = 0; i < selectedFamily.Pets.Count; i++)
         {
             <MovableImage ImgPath="img/avatars/planet1.png" ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Pet="@selectedFamily.Pets[i]" Family="@selectedFamily"/>
         }
-        
+
         for (var i = 0; i < selectedFamily.Children.Count; i++)
         {
             if (selectedFamily.Children[i].Sex.Equals("F"))
@@ -38,14 +39,15 @@
                 adultImgPath = "img/avatars/child-boy1.png";
             <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Children[i]" Family="@selectedFamily"/>
         }
-        
-        
-        <select @bind="memberType">
-            <option>Adult</option>
-            <option>Child</option>
-            <option>Pet</option>
-        </select>
-        <button type="button" @onclick=AddNewMember>Add member</button>
+
+        <div class="adding-box" style="top: @Height-20 'px'; left:  @Width-50 'px'">
+            <select class="form-control" @bind="memberType">
+                <option>Adult</option>
+                <option>Child</option>
+                <option>Pet</option>
+            </select>
+            <button type="button" @onclick=AddNewMember>Add member</button>
+        </div>
     }
     @* <MovableImage ImgPath="img/avatars/child-boy1.png" DefaultX="500" DefaultY="300" ItemWidth="100" ItemHeight="100"/> *@
     @*  <MovableImage ImgPath="img/avatars/mother.png" DefaultX="1000" DefaultY="500" ItemWidth="100" ItemHeight="100" ItemSpeed="0.8" Animate="FadeIn"/> *@
@@ -54,21 +56,35 @@
 
 @code
 {
-    [Parameter] public string FamilyAddress { get; set;}
+    
+    public int Height { get; set; }
+    public int Width { get; set; }
+    
+    [Parameter]
+    public string FamilyAddress { get; set; }
 
     private Family selectedFamily;
     private bool addingView;
     private string memberType = "Adult";
     private string address;
 
+    
+    async Task GetDimensions() {
+        var dimension = await BrowserService.GetDimensions();
+        Height = dimension.Height;
+        Width = dimension.Width;
+    }
+    
     protected override void OnInitialized()
     {
         addingView = false;
+        GetDimensions();
 
         foreach (var family in FamilyService.GetAllFamilies())
         {
-            address = family.StreetName +" "+ family.HouseNumber;
-            if (address.Equals(FamilyAddress)){
+            address = family.StreetName + " " + family.HouseNumber;
+            if (address.Equals(FamilyAddress))
+            {
                 selectedFamily = family;
             }
         }
@@ -76,6 +92,6 @@
 
     public void AddNewMember()
     {
-        NavigationManager.NavigateTo("/modifyMember/"+FamilyAddress+"/Add/"+memberType);
+        NavigationManager.NavigateTo("/modifyMember/" + FamilyAddress + "/Add/" + memberType);
     }
 }
