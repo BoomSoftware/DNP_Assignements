@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -47,6 +48,94 @@ namespace Assignment1.Data.Implementation
         {
             List<Family> families = GetAllFamilies();
             families.Remove(family);
+            WriteFamiliesToFile(families);
+        }
+
+        public void EditPerson(Family family, Person person)
+        {
+            List<Family> families = GetAllFamilies();
+            foreach (var f in families.ToList())
+            {
+                if (f.HouseNumber.Equals(family.HouseNumber) && f.StreetName.Equals(family.StreetName))
+                {
+                    if (person is Adult)
+                    {
+                        f.EditAdult((Adult)person);
+                    }
+
+                    if (person is Child)
+                    {
+                        f.EditChild((Child)person);
+                    }
+                    
+                }
+            }
+            WriteFamiliesToFile(families);
+            
+        }
+
+        public void EditPet(Family family, Pet pet)
+        {
+            List<Family> families = GetAllFamilies();
+            foreach (var f in families.ToList())
+            {
+                if (f.HouseNumber.Equals(family.HouseNumber) && f.StreetName.Equals(family.StreetName))
+                {
+                    f.EditPet(pet);
+                }
+            }
+            WriteFamiliesToFile(families);
+        }
+
+        public void AddPerson(Family family, Person person, string memberType)
+        {
+            List<Family> families = GetAllFamilies();
+            foreach (var f in families)
+            {
+                if (f.HouseNumber.Equals(family.HouseNumber) && f.StreetName.Equals(family.StreetName))
+                {
+                    f.AddPerson(person, memberType);
+                }
+            }
+            WriteFamiliesToFile(families);
+        }
+
+        public void AddPet(Family family, Pet pet)
+        {
+            List<Family> families = GetAllFamilies();
+            foreach (var f in families)
+            {
+                if (f.HouseNumber.Equals(family.HouseNumber) && f.StreetName.Equals(family.StreetName))
+                {
+                    f.AddPet(pet);
+                }
+            }
+            WriteFamiliesToFile(families);
+        }
+
+        public void RemovePerson(Family family, Person person, string memberType)
+        {
+            List<Family> families = GetAllFamilies();
+            foreach (var f in families)
+            {
+                if (f.HouseNumber.Equals(family.HouseNumber) && f.StreetName.Equals(family.StreetName))
+                {
+                    f.RemoveMember(memberType, person.Id);
+                }
+            }
+            WriteFamiliesToFile(families);
+        }
+
+        public void RemovePet(Family family, Pet pet)
+        {
+            List<Family> families = GetAllFamilies();
+            foreach (var f in families)
+            {
+                if (f.HouseNumber.Equals(family.HouseNumber) && f.StreetName.Equals(family.StreetName))
+                {
+                    f.RemovePet(pet.Id);
+                }
+            }
             WriteFamiliesToFile(families);
         }
 

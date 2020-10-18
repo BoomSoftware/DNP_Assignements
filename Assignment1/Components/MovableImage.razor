@@ -1,10 +1,14 @@
 ﻿@using Models
 @using System.Reflection.Metadata
 @using System.Diagnostics.CodeAnalysis
+@inject NavigationManager NavigationManager;
 
-<img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onmouseover=DisplayPersonInfo/>
+<img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onclick=DisplayPersonInfo/>
 <div>
-    @personInfo
+    @if (visible)
+    {
+        <AdultEditForm Adult="Person" Family="Family"></AdultEditForm>
+    }
 </div>
 
 
@@ -18,8 +22,11 @@
     [Parameter] public double ItemWidth { get; set; }
     [Parameter] public double ItemHeight { get; set; }
     [Parameter] public Person Person { get; set; }
+    [Parameter] public Pet Pet { get; set; }
+    [Parameter] public Family Family { get; set; }
 
-    private string personInfo;
+    private bool visible;
+    
     
     public MovableItem MovableItem { get; set; }
     [CascadingParameter] public AnimatedBackground ParentComponent { get; set; }
@@ -51,9 +58,12 @@
 
     private void DisplayPersonInfo()
     {
-        personInfo = "First Name: " + Person.FirstName + "\n" +
-                     "Last Name: " + Person.LastName + "\n" +
-                     "Sex: " + Person.Sex + "\n" ;
+        if(Person != null && Person is Adult)
+            NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Adult/"+Person.Id);
+        if(Pet != null)
+            NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Pet/"+Pet.Id);
+        if(Person != null && Person is Child)
+            NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Child/"+Person.Id);
     }
     
     
