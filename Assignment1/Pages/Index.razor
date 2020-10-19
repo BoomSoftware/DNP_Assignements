@@ -16,6 +16,16 @@
     PlsWork();
 }
 
+@if (canView)
+{
+    <div class="admin-box">
+        <AuthorizeView>
+            <UserBox Person="Administrator"></UserBox>
+        </AuthorizeView>
+    </div>
+    AddNewFamily();
+}
+
 @if(canView)
     {
         <div class="title-box" style="background-color: white; border: 5px solid black;">
@@ -51,6 +61,11 @@
     public void GoToFamilyTree()
     {
         NavigationManager.NavigateTo("/FamilyTree/" + address);
+    }
+    
+    public void AddNewFamily()
+    {
+       families.Add(selectedFamily);
     }
 
     public void DisplayUsers()
