@@ -1,5 +1,6 @@
 ﻿@page "/addPerson"
 @using Models
+@inject NavigationManager NavigationManager
 
 <EditForm Model="@person" OnValidSubmit="@SubmitNewPerson" class="p-3 border-primary" style="background-color: white;">
     <DataAnnotationsValidator/>
@@ -37,13 +38,18 @@
         <option value="F">F</option>
     </InputSelect>
     <br/>
-    <p class="actions">
+    @* <p class="actions"> *@
                 <button class="btn btn-outline-dark mt-3" type="submit">Create</button>
-     </p>
+     @* </p> *@
 </EditForm>
 
 @code {
     private Person person = new Person();
+    [Parameter]
+    public bool IsSubmitted { get; set; }
+    
+    [Parameter]
+    public Person PersonToSend { get; set; }
 
     private List<string> validEyeColors = new List<string>
     {
@@ -59,6 +65,7 @@
     {
         Console.WriteLine("New valid person submitted " +
                           $"{person.FirstName} {person.LastName} {person.Age} {person.Height} {person.Sex} {person.Weight} {person.EyeColor} {person.HairColor}");
+        NavigationManager.NavigateTo("/test");
     }
 
 }

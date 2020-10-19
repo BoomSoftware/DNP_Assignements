@@ -35,7 +35,7 @@ namespace Assignment1.Data.Implementation
 
         private void WriteUsersToFile()
         {
-            File.WriteAllText(userFile, JsonSerializer.Serialize(users));
+            File.WriteAllText(userFile, JsonSerializer.Serialize(users, new JsonSerializerOptions {WriteIndented = true}));
         }
     }
 }

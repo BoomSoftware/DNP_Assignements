@@ -23,10 +23,10 @@
     protected override void OnInitialized()
     {
         statisticsDetails = new List<Statistics>();
-        Dictionary<string,int> dictionary = FamilyService.GetNumberOfAdultsByEyeColor();
-        foreach (var value in dictionary)
-        {
-            statisticsDetails.Add(new Statistics {EyeColor = value.Key, Number = value.Value});
-        }
+        // Dictionary<string,int> dictionary = FamilyService.GetNumberOfAdultsByEyeColor();
+        // foreach (var value in dictionary)
+        // {
+        //     statisticsDetails.Add(new Statistics {EyeColor = value.Key, Number = value.Value});
+        // }
     }
 }

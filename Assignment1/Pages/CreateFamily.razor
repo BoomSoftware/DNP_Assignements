@@ -1,0 +1,104 @@
+﻿@page "/addFamily"
+@using Models
+@attribute [Authorize(Policy = "MustBeAdministrator")]
+@inject IFamilyService FamilyService
+@inject NavigationManager NavigationManager
+@* <style> *@
+@*     body {background-color: white;} *@
+@* </style> *@
+@* <h3>Counter: @Counter</h3> *@
+
+<EditForm Model="@family">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+
+     @if (Counter == 0)
+     {
+          <h3>Add Family</h3>
+          <p>Street Name:</p><br/>
+          <InputText @bind-Value="family.StreetName"/> <br/>
+          <p>House Number:</p><br/>
+          <InputNumber @bind-Value="family.HouseNumber"/> <br/>
+         <button class="btn btn-primary" @onclick="OnMoveToAdults">Next</button>
+     }
+
+    @if (Counter == 1)
+    {
+        <h3>Add Adult</h3>
+@*         <MyTestCounter @bind-IsFormSubmitted="@Counter"/> *@
+         <AddNewThingBox AdultToBeAddedChanged="@AdultAdded" Family="@family" MemberType="Adult" @bind-FormCounter="@Counter"/>
+
+    }
+
+    @if (Counter == 2)
+    {
+        <h3>Add Child</h3>
+@*         <MyTestCounter @bind-IsFormSubmitted="@Counter"/> *@
+         <AddNewThingBox Family="@family" ChildToBeAddedChanged="@ChildAdded" MemberType="Child" @bind-FormCounter="@Counter"/>
+
+    }
+
+    @if (Counter == 3)
+    {
+        <h3>Add Pet</h3>
+@*         <MyTestCounter @bind-IsFormSubmitted="@Counter"/> *@
+        <AddNewThingBox Family="@family" PetToBeAddedChanged="@PetAdded" MemberType="Pet" @bind-FormCounter="@Counter"/>
+        <h3>Finish</h3>
+        <button class="btn btn-primary" @onclick="CheckFamily" >Finish</button>
+    }
+</EditForm>
+
+@code {
+    private Family family = new Family();
+    // private Adult adult = new Adult();
+    // private Child child = new Child();
+    // private Pet pet = new Pet();
+    // private bool displayAddress = true;
+    // private bool displayAdults = false;
+    // private bool displayChildren = false;
+    // private bool displayPets = false;
+    [Parameter]
+    public int Counter { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Console.WriteLine("I got called with " + Counter);
+    }
+    
+    // private void OnNewValidFamily()
+    // {
+    //     FamilyService.CreateFamily(family);
+    //     NavigationManager.NavigateTo("/");
+    // }
+
+    void AdultAdded(Adult adultFromSubject)
+    {
+        Console.WriteLine("Got this adult " + adultFromSubject.FirstName);
+        family.Adults.Add(adultFromSubject);
+    }
+    
+    void ChildAdded(Child childFromSubject)
+    {
+        Console.WriteLine("Got this child " + childFromSubject.FirstName);
+        family.Children.Add(childFromSubject);
+    }
+    
+    void PetAdded(Pet petFromSubject)
+    {
+        Console.WriteLine("Got this pet " + petFromSubject.Name);
+        family.Pets.Add(petFromSubject);
+    }
+    
+    private void OnMoveToAdults()
+    {
+        Counter = 1;
+    }
+
+    private void CheckFamily()
+    {
+        Console.WriteLine($"Family: {family.StreetName} {family.HouseNumber} {family.Adults[0].FirstName} {family.Children[0].FirstName} {family.Pets[0].Name}");
+        FamilyService.CreateFamily(family);
+        NavigationManager.NavigateTo("/");
+    }
+
+}

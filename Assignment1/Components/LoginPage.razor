@@ -107,8 +107,8 @@
 
   private User user { get; set; } = new User();
   
-  private Dictionary<string, object> CustomLoginClasses;
-  private Dictionary<string, object> CustomSignupClasses;
+  private Dictionary<string, object> CustomLoginClasses = new Dictionary<string, object>();
+  private Dictionary<string, object> CustomSignupClasses = new Dictionary<string, object>();
 
   protected override void OnInitialized()
   {

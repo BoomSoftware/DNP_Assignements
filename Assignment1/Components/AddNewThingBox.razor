@@ -7,7 +7,7 @@
 {
     <div class="wrapper">
         <div class="inner">
-            <form>
+            <EditForm Model=@newPersonModel>
                 <div class="form-group">
                     <div class="form-wrapper">
                         <label for>First Name</label>
@@ -114,7 +114,7 @@
 
                 <input type="submit" value="Add" @onclick=AddNewMember/>
 
-            </form>
+            </EditForm>
         </div>
     </div>
 }
@@ -123,7 +123,7 @@
 {
     <div class="wrapper">
         <div class="inner">
-            <form>
+            <EditForm Model="@newPetModel">
                 <div class="form-wrapper">
                     <label>Name</label>
                     <input type="text" class="form-control" @bind="petName"/>
@@ -140,7 +140,7 @@
                 </div>
 
                 <input type="submit" value="Add" @onclick=AddNewMember/>
-            </form>
+            </EditForm>
         </div>
     </div>
 }
@@ -152,7 +152,31 @@
 
     [Parameter]
     public Family Family { get; set; }
+    
+    [Parameter]
+    public int FormCounter { get; set; }
+    [Parameter]
+    public EventCallback<int> FormCounterChanged { get; set; }
 
+    private Person newPersonModel = new Person();
+
+    [Parameter] 
+    public Adult AdultToBeAdded { get; set; }
+    [Parameter]
+    public EventCallback<Adult> AdultToBeAddedChanged { get; set; }
+    
+    [Parameter] 
+    public Child ChildToBeAdded { get; set; }
+    [Parameter]
+    public EventCallback<Child> ChildToBeAddedChanged { get; set; }
+    
+    [Parameter] 
+    public Pet PetToBeAdded { get; set; }
+    [Parameter]
+    public EventCallback<Pet> PetToBeAddedChanged { get; set; }
+    
+    private Pet newPetModel = new Pet();
+    
     private string firstName;
     private string lastName;
     private int age;
@@ -176,7 +200,7 @@
     private int currentInput = 1;
     private List<ChildInterest> interests;
 
-    public void AddNewMember()
+    async Task AddNewMember()
     {
         if (MemberType.Equals("Adult"))
         {
@@ -188,7 +212,7 @@
                     id = adult.Id + 1;
                 }
             }
-            FamilyService.AddPerson(Family, new Adult()
+            AdultToBeAdded = new Adult
             {
                 Id = id,
                 Age = age,
@@ -200,10 +224,14 @@
                 EyeColor = eyeColor,
                 HairColor = hairColor,
                 JobTitle = jobTitle
-            }, MemberType);
+            };
+            if (AdultToBeAdded == null)
+                Console.WriteLine("/t/t/t Adult to be added is null");
+            FamilyService.AddPerson(Family, AdultToBeAdded, MemberType);
+            await AdultToBeAddedChanged.InvokeAsync(AdultToBeAdded);
         }
-
-
+        
+        
         if (MemberType.Equals("Pet"))
         {
             List<Family> families = FamilyService.GetAllFamilies();
@@ -215,15 +243,17 @@
                 }
             }
 
-            FamilyService.AddPet(Family, new Pet()
+            PetToBeAdded = new Pet
             {
                 Age = petAge,
                 Name = petName,
                 Id = id,
                 Species = petSpecies
-            });
+            };
+            FamilyService.AddPet(Family, PetToBeAdded);
+            await PetToBeAddedChanged.InvokeAsync(PetToBeAdded);
         }
-
+        
         if (MemberType.Equals("Child"))
         {
             List<Family> families = FamilyService.GetAllFamilies();
@@ -234,9 +264,9 @@
                     id = child.Id + 1;
                 }
             }
-
+        
             interests = new List<ChildInterest>();
-
+        
             if (interest1 != null && !interest1.Equals(""))
                 interests.Add(new ChildInterest() {ChildId = id, InterestId = interest1});
             if (interest2 != null && !interest2.Equals(""))
@@ -248,7 +278,7 @@
             if (interest5 != null && !interest5.Equals(""))
                 interests.Add(new ChildInterest() {ChildId = id, InterestId = interest5});
 
-            FamilyService.AddPerson(Family, new Child()
+            ChildToBeAdded = new Child
             {
                 Id = id,
                 Age = age,
@@ -260,15 +290,22 @@
                 EyeColor = eyeColor,
                 HairColor = hairColor,
                 ChildInterests = interests
-            }, MemberType);
+            };
+            FamilyService.AddPerson(Family, ChildToBeAdded, MemberType);
+            Console.WriteLine("Firing event for " + ChildToBeAdded.FirstName);
+            await ChildToBeAddedChanged.InvokeAsync(ChildToBeAdded);
         }
-
-        NavigationManager.NavigateTo
-            ("/FamilyTree/" +
-             Family.StreetName
-             + " " +
-             Family.HouseNumber
-            );
+        if (MemberType.Equals("Adult"))
+            FormCounter = 2;
+        if (MemberType.Equals("Child"))
+            FormCounter = 3;
+        if (MemberType.Equals("Pet"))
+            FormCounter = 4;
+        Console.WriteLine("Firing new event with " + FormCounter);
+        if (FormCounter == 2 || FormCounter == 3)
+            await FormCounterChanged.InvokeAsync(FormCounter);
+        if (FormCounter < 2)
+            NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
 
 }

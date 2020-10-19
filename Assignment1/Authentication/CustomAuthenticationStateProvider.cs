@@ -69,6 +69,7 @@ namespace Assignment1.Authentication
             var user = new ClaimsPrincipal(new ClaimsIdentity());
             jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", "");
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
+            Console.WriteLine("Logged user out from custom");
         }
 
         private ClaimsIdentity SetupClaimsForUser(User user)

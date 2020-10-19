@@ -141,7 +141,9 @@ namespace Assignment1.Data.Implementation
 
         private void WriteFamiliesToFile(List<Family> families)
         {
-            string famList = JsonSerializer.Serialize(families);
+            string famList = JsonSerializer.Serialize(families, new JsonSerializerOptions {
+                WriteIndented = true
+            });
             File.WriteAllText(jsonFile,famList);
         }
     }

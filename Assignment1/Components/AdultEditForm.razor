@@ -4,7 +4,7 @@
 @using Models
 <div class="wrapper">
     <div class="inner">
-        <form>
+        <EditForm Model="@Adult" OnValidSubmit="EditPerson">
             <button @onclick=RemoveMember>Remove Member</button>
             <div class="form-group">
                 <div class="form-wrapper">
@@ -110,10 +110,10 @@
             }
 
 
-            <input type="submit" value="Add" @onclick=EditPerson/>
+            <input type="submit" value="Add"/>
 
 
-        </form>
+        </EditForm>
     </div>
 </div>
 
@@ -231,6 +231,7 @@
                 ChildInterests = updatedInterest
             });
         }
+        Console.WriteLine("Edited adult and now going to family view");
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
 

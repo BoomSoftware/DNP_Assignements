@@ -16,6 +16,8 @@ namespace Models
         public Family()
         {
             Adults = new List<Adult>();
+            Children = new List<Child>();
+            Pets = new List<Pet>();
         }
 
         public void AddPerson(Person person, string memberType)

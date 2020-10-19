@@ -2,8 +2,7 @@
 @using Models
 @inject IFamilyService FamilyService
 @inject NavigationManager NavigationManager
-
-       
+@inject AuthenticationStateProvider AuthenticationStateProvider 
 
  @if (!canView)
 { 
@@ -16,15 +15,15 @@
     PlsWork();
 }
 
-@if (canView)
-{
-    <div class="admin-box">
-        <AuthorizeView>
-            <UserBox Person="Administrator"></UserBox>
-        </AuthorizeView>
-    </div>
-    AddNewFamily();
-}
+@* @if (canView) *@
+@* { *@
+@*     <div class="admin-box"> *@
+@*         <AuthorizeView> *@
+@*             <UserBox Person="Administrator"></UserBox> *@
+@*         </AuthorizeView> *@
+@*     </div> *@
+@*     AddNewFamily(); *@
+@* } *@
 
 @if(canView)
     {
@@ -38,7 +37,20 @@
              </select>
         </div>
         <button type="button" @onclick=GoToFamilyTree>Open Family</button>
+        <AuthorizeView Policy="MustBeAdministrator">
+            <Authorized >
+                <button class="btn btn-primary" @onclick="OpenCreateFamily">Create Family</button>
+            </Authorized>
+        </AuthorizeView>
+        <AuthorizeView>
+            <Authorized >
+                <button class="btn btn-primary" @onclick="Logout">Log-out</button>
+            </Authorized>
+        </AuthorizeView>
     }
+
+
+
 @code
 {
     [CascadingParameter]
@@ -63,10 +75,10 @@
         NavigationManager.NavigateTo("/FamilyTree/" + address);
     }
     
-    public void AddNewFamily()
-    {
-       families.Add(selectedFamily);
-    }
+    // public void AddNewFamily()
+    // {
+    //    families.Add(selectedFamily);
+    // }
 
     public void DisplayUsers()
     {
@@ -94,5 +106,19 @@
         {
             StateHasChanged();
         }
+    }
+
+    private void OpenCreateFamily()
+    {
+        NavigationManager.NavigateTo("/addFamily");
+    }
+
+    private void Logout()
+    {
+        cssRegisterString = "hide";
+        cssString = "hide";
+        canView = false;
+        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+        NavigationManager.NavigateTo("/");
     }
 }

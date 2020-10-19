@@ -15,13 +15,14 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Components" t="Include">
-          <e p="AddNewAdultBox.razor" t="Include" />
+          <e p="AddNewThingBox.razor" t="Include" />
           <e p="AdultEditForm.razor" t="Include" />
-          <e p="AddPerson.razor" t="Include" />
-          <e p="AddPet.razor" t="Include" />
           <e p="AnimatedBackground.razor" t="Include" />
+          <e p="CreatePerson.razor" t="Include" />
+          <e p="CreatePet.razor" t="Include" />
           <e p="LoginPage.razor" t="Include" />
           <e p="MovableImage.razor" t="Include" />
+          <e p="MyTestCounter.razor" t="Include" />
           <e p="PetEditForm.razor" t="Include" />
           <e p="UserBox.razor" t="Include" />
         </e>
@@ -60,8 +61,8 @@
         </e>
         <e p="Pages" t="Include">
           <e p="_Host.cshtml" t="Include" />
-          <e p="AddFamily.razor" t="Include" />
           <e p="Charts.razor" t="Include" />
+          <e p="CreateFamily.razor" t="Include" />
           <e p="Error.cshtml" t="Include" />
           <e p="FamilyTree.razor" t="Include" />
           <e p="Index.razor" t="Include" />

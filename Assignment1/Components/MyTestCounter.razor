@@ -1,0 +1,15 @@
+﻿<h3>MyTestCounter: @IsFormSubmitted</h3>
+<input type="submit" value="Add" @onclick=AddNewMember/>
+@code {
+    [Parameter]
+    public int IsFormSubmitted { get; set; }
+    [Parameter]
+    public EventCallback<int> IsFormSubmittedChanged { get; set; }
+
+    private async Task AddNewMember()
+    {
+        IsFormSubmitted++;
+      await  IsFormSubmittedChanged.InvokeAsync(IsFormSubmitted);
+    }
+
+}
