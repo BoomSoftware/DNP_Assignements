@@ -1,0 +1,6 @@
+[
+  {"Username":"Admin","Password":"12345","SecurityLevel":"Administrator"},
+  {"Username":"User1","Password":"12345","SecurityLevel":"RegularUser"},
+  {"Username":"User2","Password":"12345","SecurityLevel":"RegularUser"},
+  {"Username":"User3","Password":"12345","SecurityLevel":"RegularUser"}
+]

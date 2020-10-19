@@ -1,0 +1,47 @@
+﻿@using Models
+@inject NavigationManager NavigationManager
+@inject IFamilyService FamilyService
+
+<h3>UserForm</h3>
+<button @onclick=RemoveMember>Remove Member</button>
+<input type="text"  @bind="petAge"/>
+<input type="text"  @bind="petName"/>
+<input type="text"  @bind="petSpices"/>
+<input type="submit" @onclick=EditPet value="Edit">
+
+@code {
+    [Parameter] public Family Family { get; set;}
+    [Parameter] public Pet Pet { get; set; }
+
+    private int petAge;
+    private string petName;
+    private string petSpices;
+
+    protected override void OnInitialized()
+    {
+        petAge = Pet.Age;
+        petName = Pet.Name;
+        petSpices = Pet.Species;
+    }
+
+
+    public void EditPet()
+    {
+        FamilyService.EditPet(Family, new Pet()
+        {
+            Age = petAge,
+            Name = petName,
+            Species = petSpices,
+            Id = Pet.Id
+        });
+        NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
+    }
+
+    public void RemoveMember()
+    {
+        FamilyService.RemovePet(Family, Pet);
+        NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
+    }
+
+
+}

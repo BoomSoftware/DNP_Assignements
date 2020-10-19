@@ -1,0 +1,274 @@
+﻿@using Models
+@using System.Threading
+@inject IFamilyService FamilyService
+@inject NavigationManager NavigationManager;
+
+@if (MemberType.Equals("Adult") || MemberType.Equals("Child"))
+{
+    <div class="wrapper">
+        <div class="inner">
+            <form>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label for>First Name</label>
+                        <input type="text" class="form-control" @bind="firstName"/>
+                    </div>
+                    <div class="form-wrapper">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" @bind="lastName"/>
+                    </div>
+                </div>
+                <div class="form-wrapper">
+                    <label>Age</label>
+                    <input type="number" class="form-control" @bind="age"/>
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label>Weight</label>
+                        <input type="text" class="form-control" @bind="weight"/>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <label>Height</label>
+                        <input type="text" class="form-control" @bind="height"/>
+                    </div>
+                </div>
+
+
+                <div class="form-wrapper">
+                    <label>Sex</label>
+                    <select class="form-control" @bind="sex">
+                        <option>M</option>
+                        <option>F</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label>Hair Color</label>
+                        <select class="form-control" @bind="hairColor">
+                            <option>Blond</option>
+                            <option>Red</option>
+                            <option>Brown</option>
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Gray</option>
+                            <option>Blue</option>
+                            <option>Leverpostej</option>
+                        </select>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <label>Eye Color</label>
+                        <select class="form-control" @bind="eyeColor">
+                            <option>Brown</option>
+                            <option>Grey</option>
+                            <option>Green</option>
+                            <option>Blue</option>
+                            <option>Amber</option>
+                            <option>Hazel</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                @if (MemberType.Equals("Adult"))
+                {
+                    <div class="form-wrapper">
+                        <label>Job Title</label>
+                        <input type="text" class="form-control" @bind="jobTitle"/>
+                    </div>
+                }
+
+                @if (MemberType.Equals("Child"))
+                {
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label>Interest 1</label>
+                            <input type="text" class="form-control" @bind="interest1"/>
+                        </div>
+
+                        <div class="form-wrapper">
+                            <label>Interest 2</label>
+                            <input type="text" class="form-control" @bind="interest2"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label>Interest 3</label>
+                            <input type="text" class="form-control" @bind="interest3"/>
+                        </div>
+
+                        <div class="form-wrapper">
+                            <label>Interest 4</label>
+                            <input type="text" class="form-control" @bind="interest4"/>
+                        </div>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <label>Interest 5</label>
+                        <input type="text" class="form-control" @bind="interest5"/>
+                    </div>
+                }
+
+
+                <input type="submit" value="Add" @onclick=AddNewMember/>
+
+            </form>
+        </div>
+    </div>
+}
+
+@if (MemberType.Equals("Pet"))
+{
+    <div class="wrapper">
+        <div class="inner">
+            <form>
+                <div class="form-wrapper">
+                    <label>Name</label>
+                    <input type="text" class="form-control" @bind="petName"/>
+                </div>
+
+                <div class="form-wrapper">
+                    <label>Age</label>
+                    <input type="number" class="form-control" @bind="petAge"/>
+                </div>
+
+                <div class="form-wrapper">
+                    <label>Species</label>
+                    <input type="text" class="form-control" @bind="petSpecies"/>
+                </div>
+
+                <input type="submit" value="Add" @onclick=AddNewMember/>
+            </form>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public string MemberType { get; set; }
+
+    [Parameter]
+    public Family Family { get; set; }
+
+    private string firstName;
+    private string lastName;
+    private int age;
+    private int weight;
+    private int height;
+    private string sex = "M";
+    private string hairColor = "Blond";
+    private string eyeColor = "Brown";
+    private string petName;
+    private int petAge;
+    private string petSpecies;
+
+    private string interest1;
+    private string interest2;
+    private string interest3;
+    private string interest4;
+    private string interest5;
+
+    private string jobTitle;
+    private int id;
+    private int currentInput = 1;
+    private List<ChildInterest> interests;
+
+    public void AddNewMember()
+    {
+        if (MemberType.Equals("Adult"))
+        {
+            List<Family> families = FamilyService.GetAllFamilies();
+            foreach (var family in families)
+            {
+                foreach (var adult in family.Adults)
+                {
+                    id = adult.Id + 1;
+                }
+            }
+            FamilyService.AddPerson(Family, new Adult()
+            {
+                Id = id,
+                Age = age,
+                FirstName = firstName,
+                LastName = lastName,
+                Height = height,
+                Sex = sex,
+                Weight = weight,
+                EyeColor = eyeColor,
+                HairColor = hairColor,
+                JobTitle = jobTitle
+            }, MemberType);
+        }
+
+
+        if (MemberType.Equals("Pet"))
+        {
+            List<Family> families = FamilyService.GetAllFamilies();
+            foreach (var family in families)
+            {
+                foreach (var pet in family.Pets)
+                {
+                    id = pet.Id + 1;
+                }
+            }
+
+            FamilyService.AddPet(Family, new Pet()
+            {
+                Age = petAge,
+                Name = petName,
+                Id = id,
+                Species = petSpecies
+            });
+        }
+
+        if (MemberType.Equals("Child"))
+        {
+            List<Family> families = FamilyService.GetAllFamilies();
+            foreach (var family in families)
+            {
+                foreach (var child in family.Children)
+                {
+                    id = child.Id + 1;
+                }
+            }
+
+            interests = new List<ChildInterest>();
+
+            if (interest1 != null && !interest1.Equals(""))
+                interests.Add(new ChildInterest() {ChildId = id, InterestId = interest1});
+            if (interest2 != null && !interest2.Equals(""))
+                interests.Add(new ChildInterest() {ChildId = id, InterestId = interest2});
+            if (interest3 != null && !interest3.Equals(""))
+                interests.Add(new ChildInterest() {ChildId = id, InterestId = interest3});
+            if (interest4 != null && !interest4.Equals(""))
+                interests.Add(new ChildInterest() {ChildId = id, InterestId = interest4});
+            if (interest5 != null && !interest5.Equals(""))
+                interests.Add(new ChildInterest() {ChildId = id, InterestId = interest5});
+
+            FamilyService.AddPerson(Family, new Child()
+            {
+                Id = id,
+                Age = age,
+                FirstName = firstName,
+                LastName = lastName,
+                Height = height,
+                Sex = sex,
+                Weight = weight,
+                EyeColor = eyeColor,
+                HairColor = hairColor,
+                ChildInterests = interests
+            }, MemberType);
+        }
+
+        NavigationManager.NavigateTo
+            ("/FamilyTree/" +
+             Family.StreetName
+             + " " +
+             Family.HouseNumber
+            );
+    }
+
+}

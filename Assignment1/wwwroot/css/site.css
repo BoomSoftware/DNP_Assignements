@@ -9,7 +9,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #060c21;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/background.jpg");
 }
 
 a, .btn-link {
@@ -191,13 +194,8 @@ app {
 }
 
 .background{
-    background-image: url("../img/background.png");
     width: 100%;
-    height: 100vh; 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
-    background-color: #1b6ec2;
+    height: 100vh;
 }
 
 .circle-icon{
@@ -331,6 +329,101 @@ app {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     grid-template-rows: auto;
     grid-gap: 0 40px;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+.inner {
+    min-width: 600px;
+    margin: 50px auto auto;
+    padding-top: 68px;
+    padding-bottom: 48px;
+    border-radius: 30px;
+    background-color: white;
+}
+.inner h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+}
+.form-group {
+    display: flex;
+}
+.form-group .form-wrapper {
+    width: 50%;
+}
+.form-group .form-wrapper:first-child {
+     margin-right: 20px;
+ }
+
+.form-wrapper {
+    margin-bottom: 10px;
+}
+.form-wrapper label {
+    margin-bottom: 9px;
+    display: block;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-family: "Muli-Bold";
+    background: none;
+}
+.form-control:focus {
+     border: 1px solid #ae3c33;
+}
+
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {
+    .inner {
+        min-width: 768px;
+    }
+}
+@media (max-width: 767px) {
+    .inner {
+        min-width: auto;
+        background:none;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    form {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.img-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 

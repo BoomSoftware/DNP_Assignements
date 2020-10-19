@@ -1,6 +1,5 @@
 ﻿@using Models
 @using Assignment1.Pages
-@inject IModalService Modal
 
 <div class="user-box" style="@css">
     <div class="content">
@@ -10,13 +9,46 @@
             @userDescription
         </p>
         @if (Person.Equals("Administrator") || Person.Equals("RegularUser")){
-            <a @onclick="@(() => Modal.Show<LoginPage>("Login"))" class="btn btn-primary">View </a>
+            <a @onclick="UpdateCssString" class="btn btn-primary">View </a>
         }
-    </div>
+        @if (Person.Equals("Visitor")){
+            <a @onclick="ContinueAsVisitor" class="btn btn-primary">Continue </a>
+        }
+     </div>
 </div>
 
-@code {
+@* <BlazorModal Title="Hello from Blazor Templated Components" IsOpened="isOpened"> *@
+@*     <ModalBody> *@
+@*         <h4>Is it nice?</h4> *@
+@*         <p>this is a templated component in Blazor WebAssembly</p> *@
+@*     </ModalBody> *@
+@*     <ModalFooter> *@
+@*         <button class="btn btn-primary">Close Modal</button> *@
+@*     </ModalFooter> *@
+@* </BlazorModal> *@
 
+@code {
+    // [CascadingParameter] 
+    // public IModalService Modal { get; set; }
+    
+    [Parameter]
+    public bool IsVisitor { get; set; }
+    
+    [Parameter]
+    public string CssString { get; set; }
+    
+    [Parameter]
+    public string CssRegisterString { get; set; }
+    
+    [Parameter]
+    public EventCallback<string> CssStringChanged { get; set; }
+    
+    [Parameter]
+    public EventCallback<string> CssRegisterStringChanged { get; set; }
+    
+    [Parameter]
+    public EventCallback<bool> IsVisitorChanged { get; set; }
+    
     private string css => $"border: {borders};";
     private string[] bordersStyle = new[]
     {
@@ -50,7 +82,7 @@
                 break;
             case "Visitor":
                 username = "Visitor";
-                userDescription = "Function for viewing family information is available for thins type of account";
+                userDescription = "Function for viewing family information is available for this type of account";
                 break;
         }
     }
@@ -61,4 +93,26 @@
         //borders = "3px solid green";
     }
 
+    async Task UpdateCssString()
+    {
+        CssString = "show";
+        if (Person.Equals("Administrator"))
+            CssRegisterString = "hide";
+        else
+        {
+            Console.WriteLine("Showing css register string");
+            CssRegisterString = "show";
+        }
+        
+        await CssStringChanged.InvokeAsync(CssString);
+        Console.WriteLine("Also invoking register string");
+        await CssRegisterStringChanged.InvokeAsync(CssRegisterString);
+    }
+    
+    async Task ContinueAsVisitor()
+    {
+        IsVisitor = true;
+        await IsVisitorChanged.InvokeAsync(IsVisitor);
+        
+    }
 }
