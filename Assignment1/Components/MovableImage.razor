@@ -3,13 +3,8 @@
 @using System.Diagnostics.CodeAnalysis
 @inject NavigationManager NavigationManager;
 
-<img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onclick=DisplayPersonInfo/>
-<div>
-    @if (visible)
-    {
-        <AdultEditForm Adult="Person" Family="Family"></AdultEditForm>
-    }
-</div>
+    <img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onclick=DisplayPersonInfo @onmouseover=ShowName @onmouseout=HideName/>
+    <div class="img-text" style="@css">@name</div>
 
 
 @code {
@@ -25,9 +20,9 @@
     [Parameter] public Pet Pet { get; set; }
     [Parameter] public Family Family { get; set; }
 
-    private bool visible;
-    
-    
+    private string name;
+
+
     public MovableItem MovableItem { get; set; }
     [CascadingParameter] public AnimatedBackground ParentComponent { get; set; }
 
@@ -64,6 +59,19 @@
             NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Pet/"+Pet.Id);
         if(Person != null && Person is Child)
             NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Child/"+Person.Id);
+    }
+
+    private void ShowName()
+    {
+        if ((Person != null && Person is Adult) || (Person != null && Person is Child))
+            name = Person.FirstName +" "+ Person.LastName;
+        if (Pet != null)
+            name = Pet.Name;
+    }
+
+    private void HideName()
+    {
+        name = "";
     }
     
     

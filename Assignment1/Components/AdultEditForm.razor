@@ -2,35 +2,128 @@
 @inject NavigationManager NavigationManager
 
 @using Models
-<div class="adding-form">
-<button @onclick=RemoveMember>Remove Member</button>
-<input type="text"  @bind="updatedFirstname"/>
-<input type="text"  @bind="updatedLastname"/>
-<input type="text"  @bind="updatedAge"/>
-<input type="text"  @bind="updatedHeight"/>
-<input type="text"  @bind="updatedSex"/>
-<input type="text"  @bind="updatedWeight"/>
-<input type="text"  @bind="updatedEyeColor"/>
-<input type="text"  @bind="updatedHairColor"/>
+<div class="wrapper">
+    <div class="inner">
+        <form>
+            <button @onclick=RemoveMember>Remove Member</button>
+            <div class="form-group">
+                <div class="form-wrapper">
+                    <label for>First Name</label>
+                    <input type="text" class="form-control" @bind="updatedFirstname"/>
+                </div>
+                <div class="form-wrapper">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" @bind="updatedLastname"/>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <label>Age</label>
+                <input type="number" class="form-control" @bind="updatedAge"/>
+            </div>
+            <div class="form-group">
+                <div class="form-wrapper">
+                    <label>Weight</label>
+                    <input type="text" class="form-control" @bind="updatedWeight"/>
+                </div>
 
-@if (Adult is Adult)
-{
-    <input type="text"  @bind="updatedJob"/>
-}
+                <div class="form-wrapper">
+                    <label>Height</label>
+                    <input type="text" class="form-control" @bind="updatedHeight"/>
+                </div>
+            </div>
 
-@if (Adult is Child)
-{
-    <input type="text" @bind="interest1"/>
-    <input type="text" @bind="interest2"/>
-    <input type="text" @bind="interest3"/>
-    <input type="text" @bind="interest4"/>
-    <input type="text" @bind="interest5"/>
-}
-<input type="submit" @onclick=EditPerson value="Edit">
+
+            <div class="form-wrapper">
+                <label>Sex</label>
+                <select class="form-control" @bind="updatedSex">
+                    <option>M</option>
+                    <option>F</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="form-wrapper">
+                    <label>Hair Color</label>
+                    <select class="form-control" @bind="updatedHairColor">
+                        <option>Blond</option>
+                        <option>Red</option>
+                        <option>Brown</option>
+                        <option>Black</option>
+                        <option>White</option>
+                        <option>Gray</option>
+                        <option>Blue</option>
+                        <option>Leverpostej</option>
+                    </select>
+                </div>
+
+                <div class="form-wrapper">
+                    <label>Eye Color</label>
+                    <select class="form-control" @bind="updatedEyeColor">
+                        <option>Brown</option>
+                        <option>Grey</option>
+                        <option>Green</option>
+                        <option>Blue</option>
+                        <option>Amber</option>
+                        <option>Hazel</option>
+                    </select>
+                </div>
+            </div>
+
+
+            @if (Adult is Adult)
+            {
+                <div class="form-wrapper">
+                    <label>Job Title</label>
+                    <input type="text" class="form-control" @bind="updatedJob"/>
+                </div>
+            }
+
+            @if (Adult is Child)
+            {
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label>Interest 1</label>
+                        <input type="text" class="form-control" @bind="interest1"/>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <label>Interest 2</label>
+                        <input type="text" class="form-control" @bind="interest2"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label>Interest 3</label>
+                        <input type="text" class="form-control" @bind="interest3"/>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <label>Interest 4</label>
+                        <input type="text" class="form-control" @bind="interest4"/>
+                    </div>
+                </div>
+
+                <div class="form-wrapper">
+                    <label>Interest 5</label>
+                    <input type="text" class="form-control" @bind="interest5"/>
+                </div>
+            }
+
+
+            <input type="submit" value="Add" @onclick=EditPerson/>
+
+
+        </form>
+    </div>
 </div>
+
 @code {
-    [Parameter] public Person Adult { get; set;}
-    [Parameter] public Family Family { get; set;}
+
+    [Parameter]
+    public Person Adult { get; set; }
+
+    [Parameter]
+    public Family Family { get; set; }
 
     private string updatedFirstname;
     private string updatedLastname;
@@ -48,41 +141,46 @@
     private string interest3;
     private string interest4;
     private string interest5;
-    
+
     private List<ChildInterest> interestList;
 
 
     protected override void OnInitialized()
     {
-        updatedFirstname = Adult.FirstName;
-        updatedLastname = Adult.LastName;
-        updatedAge = Adult.Age;
-        updatedHeight = Adult.Height;
-        updatedSex = Adult.Sex;
-        updatedWeight = Adult.Weight;
-        updatedHairColor = Adult.HairColor;
-        updatedEyeColor = Adult.EyeColor;
-
-        if (Adult is Adult)
+        if (Adult != null)
         {
-            updatedJob = ((Adult) Adult).JobTitle;
+               updatedFirstname = Adult.FirstName;
+                    updatedLastname = Adult.LastName;
+                    updatedAge = Adult.Age;
+                    updatedHeight = Adult.Height;
+                    updatedSex = Adult.Sex;
+                    updatedWeight = Adult.Weight;
+                    updatedHairColor = Adult.HairColor;
+                    updatedEyeColor = Adult.EyeColor;
+                    
+                    Console.WriteLine(updatedAge);
+            
+                    if (Adult is Adult)
+                    {
+                        updatedJob = ((Adult) Adult).JobTitle;
+                    }
+            
+                    if (Adult is Child)
+                    {
+                        interestList = ((Child) Adult).ChildInterests;
+                        if (interestList.Count > 0)
+                            interest1 = interestList[0].InterestId;
+                        if (interestList.Count > 1)
+                            interest2 = interestList[1].InterestId;
+                        if (interestList.Count > 2)
+                            interest3 = interestList[2].InterestId;
+                        if (interestList.Count > 3)
+                            interest4 = interestList[3].InterestId;
+                        if (interestList.Count > 4)
+                            interest5 = interestList[4].InterestId;
+                    }
         }
-
-        if (Adult is Child)
-        {
-            interestList = ((Child) Adult).ChildInterests;
-            if(interestList.Count > 0)
-                interest1 = interestList[0].InterestId;
-            if(interestList.Count > 1)
-                interest2 = interestList[1].InterestId;
-            if(interestList.Count > 2)
-                interest3 = interestList[2].InterestId;
-            if(interestList.Count > 3)
-                interest4 = interestList[3].InterestId;
-            if(interestList.Count > 4)
-                interest5 = interestList[4].InterestId;
-
-        }
+     
     }
 
     public void EditPerson()
@@ -102,24 +200,23 @@
                 JobTitle = updatedJob,
                 Id = Adult.Id
             });
-           
         }
 
         if (Adult is Child)
         {
             List<ChildInterest> updatedInterest = new List<ChildInterest>();
-            
-            if(interest1 != null && !interest1.Equals(""))
-                updatedInterest.Add(new ChildInterest(){ChildId = Adult.Id, InterestId = interest1});
-            if(interest2 != null && !interest2.Equals(""))
-                updatedInterest.Add(new ChildInterest(){ChildId = Adult.Id, InterestId = interest2});
-            if(interest3 != null && !interest3.Equals(""))
-                updatedInterest.Add(new ChildInterest(){ChildId = Adult.Id, InterestId = interest3});
-            if(interest4 != null && !interest4.Equals(""))
-                updatedInterest.Add(new ChildInterest(){ChildId = Adult.Id, InterestId = interest4});
-            if(interest5 != null && !interest5.Equals(""))
-                updatedInterest.Add(new ChildInterest(){ChildId = Adult.Id, InterestId = interest5});
-            
+
+            if (interest1 != null && !interest1.Equals(""))
+                updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest1});
+            if (interest2 != null && !interest2.Equals(""))
+                updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest2});
+            if (interest3 != null && !interest3.Equals(""))
+                updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest3});
+            if (interest4 != null && !interest4.Equals(""))
+                updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest4});
+            if (interest5 != null && !interest5.Equals(""))
+                updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest5});
+
             FamilyService.EditPerson(Family, new Child()
             {
                 Age = updatedAge,
@@ -139,11 +236,12 @@
 
     public void RemoveMember()
     {
-        if(Adult is Adult)
+        if (Adult is Adult)
             FamilyService.RemovePerson(Family, Adult, "Adult");
-        if(Adult is Child)
+        if (Adult is Child)
             FamilyService.RemovePerson(Family, Adult, "Child");
-        
+
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
+
 }
