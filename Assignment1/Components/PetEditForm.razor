@@ -47,7 +47,7 @@
 
     public void EditPet()
     {
-        FamilyService.EditPet(Family, new Pet()
+        FamilyService.EditPetAsync(Family, new Pet()
         {
             Age = petAge,
             Name = petName,
@@ -59,7 +59,7 @@
 
     public void RemoveMember()
     {
-        FamilyService.RemovePet(Family, Pet);
+        FamilyService.RemovePetAsync(Family, Pet);
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
 

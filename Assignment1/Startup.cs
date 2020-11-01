@@ -28,7 +28,7 @@ namespace Assignment1
             services.AddBlazoredModal();
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<IFamilyService, FamilyJsonManager>();
+            services.AddSingleton<IFamilyService, CustomFamilyAPIConsumer>();
             services.AddScoped<BrowserService>();
             services.AddBlazoredModal();
             services.AddSyncfusionBlazor();

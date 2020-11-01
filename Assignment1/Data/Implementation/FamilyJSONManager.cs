@@ -8,7 +8,8 @@ using Models;
 
 namespace Assignment1.Data.Implementation
 {
-    public class FamilyJsonManager : IFamilyService
+    // this class no longer implements IFamilyService because of async update
+    public class FamilyJsonManager
     {
         private readonly string jsonFile = "wwwroot/json/families.json";
 
@@ -87,7 +88,7 @@ namespace Assignment1.Data.Implementation
             WriteFamiliesToFile(families);
         }
 
-        public void AddPerson(Family family, Person person, string memberType)
+        public void AddPersonAsync(Family family, Person person, string memberType)
         {
             List<Family> families = GetAllFamilies();
             foreach (var f in families)
@@ -100,7 +101,7 @@ namespace Assignment1.Data.Implementation
             WriteFamiliesToFile(families);
         }
 
-        public void AddPet(Family family, Pet pet)
+        public void AddPetAsync(Family family, Pet pet)
         {
             List<Family> families = GetAllFamilies();
             foreach (var f in families)
@@ -113,7 +114,7 @@ namespace Assignment1.Data.Implementation
             WriteFamiliesToFile(families);
         }
 
-        public void RemovePerson(Family family, Person person, string memberType)
+        public void RemovePersonAsync(Family family, Person person, string memberType)
         {
             List<Family> families = GetAllFamilies();
             foreach (var f in families)
@@ -126,7 +127,7 @@ namespace Assignment1.Data.Implementation
             WriteFamiliesToFile(families);
         }
 
-        public void RemovePet(Family family, Pet pet)
+        public void RemovePetAsync(Family family, Pet pet)
         {
             List<Family> families = GetAllFamilies();
             foreach (var f in families)

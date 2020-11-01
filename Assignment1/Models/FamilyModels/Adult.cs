@@ -1,7 +1,10 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Models {
 public class Adult : Person {
+    
+    [JsonPropertyName("jobTitle")]
     public string JobTitle { get; set; }
 
     public override string ToString() {

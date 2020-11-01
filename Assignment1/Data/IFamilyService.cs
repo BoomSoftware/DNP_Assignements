@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Models;
 
 namespace Assignment1.Data
 {
     public interface IFamilyService
     {
-        List<Family> GetAllFamilies();
+        Task<List<Family>> GetAllFamiliesAsync();
        // void WriteAllFamilies(List<Family> families);
-        void CreateFamily(Family family);
-        void UpdateFamily(Family family);
-        void DeleteFamily(Family family);
-        void EditPerson(Family family, Person person);
+        Task CreateFamilyAsync(Family family);
+        Task UpdateFamilyAsync(Family family);
+        Task DeleteFamilyAsync(Family family);
+        Task EditPersonAsync(Family family, Person person);
 
-        void EditPet(Family family, Pet pet);
-        void AddPerson(Family family, Person person, string memberType);
+        Task EditPetAsync(Family family, Pet pet);
+        Task AddPersonAsync(Family family, Person person, string memberType);
 
-        void AddPet(Family family, Pet pet);
-        void RemovePerson(Family family, Person person, string memberType);
-        void RemovePet(Family family, Pet pet);
+        Task AddPetAsync(Family family, Pet pet);
+        Task RemovePersonAsync(Family family, Person person, string memberType);
+        Task RemovePetAsync(Family family, Pet pet);
+
+        List<Family> GetCachedFamilies();
     }
 }

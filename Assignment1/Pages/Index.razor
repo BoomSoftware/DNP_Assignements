@@ -30,9 +30,12 @@
         <div class="title-box" style="background-color: white; border: 5px solid black;">
             <h3>Select Family Address</h3>
              <select @bind="address" @onclick=DisplayUsers>
-                 @foreach (Family family in families)
+                 @if (families != null)
                  {
-                     <option>@family.StreetName @family.HouseNumber</option>
+                     @foreach (Family family in families)
+                         {
+                             <option>@family.StreetName @family.HouseNumber</option>
+                         }
                  }
              </select>
         </div>
@@ -65,9 +68,10 @@
     private Family selectedFamily;
     private bool usersComponents;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        families = FamilyService.GetAllFamilies();
+        families = await FamilyService.GetAllFamiliesAsync();
+        Console.WriteLine("Index initialized async with families length " + families.Count);
     }
 
     public void GoToFamilyTree()

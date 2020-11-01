@@ -76,12 +76,13 @@
         Width = dimension.Width;
     }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         addingView = false;
         GetDimensions();
 
-        foreach (var family in FamilyService.GetAllFamilies())
+        List<Family> families = await FamilyService.GetAllFamiliesAsync();
+        foreach (var family in families)
         {
             address = family.StreetName + " " + family.HouseNumber;
             if (address.Equals(FamilyAddress))

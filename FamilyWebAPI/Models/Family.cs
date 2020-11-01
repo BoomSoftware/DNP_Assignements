@@ -1,30 +1,25 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Models
+namespace FamilyWebAPI.Models
 {
     public class Family
     {
-        [JsonIgnore]
+         [JsonIgnore]
         public int Id { get; set; }
         
-        [JsonPropertyName("streetName")]
         [Required] 
         public string StreetName { get; set; }
         
-        [JsonPropertyName("houseNumber")]
         [Required] 
         public int HouseNumber { get; set; }
         
-        [JsonPropertyName("adults")]
         public List<Adult> Adults { get; set; }
         
-        [JsonPropertyName("children")]
         public List<Child> Children { get; set; }
         
-        [JsonPropertyName("pets")]
         public List<Pet> Pets { get; set; }
 
         public Family()
@@ -32,6 +27,15 @@ namespace Models
             Adults = new List<Adult>();
             Children = new List<Child>();
             Pets = new List<Pet>();
+        }
+
+        public void EditFamily(Family family)
+        {
+            StreetName = family.StreetName;
+            HouseNumber = family.HouseNumber;
+            Adults = family.Adults;
+            Children = family.Children;
+            Pets = family.Pets;
         }
 
         public void AddPerson(Person person, string memberType)

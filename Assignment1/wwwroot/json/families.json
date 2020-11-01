@@ -1031,6 +1031,32 @@
         "Weight": 18.87,
         "Height": 121,
         "Sex": "F"
+      },
+      {
+        "ChildInterests": [],
+        "Pets": null,
+        "Id": 64,
+        "FirstName": "Test",
+        "LastName": "Child",
+        "HairColor": "Brown",
+        "EyeColor": "Amber",
+        "Age": 3,
+        "Weight": 11,
+        "Height": 111,
+        "Sex": "M"
+      },
+      {
+        "ChildInterests": [],
+        "Pets": null,
+        "Id": 64,
+        "FirstName": "Test",
+        "LastName": "Child",
+        "HairColor": "Brown",
+        "EyeColor": "Amber",
+        "Age": 3,
+        "Weight": 11,
+        "Height": 111,
+        "Sex": "M"
       }
     ],
     "Pets": []

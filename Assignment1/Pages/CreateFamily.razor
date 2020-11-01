@@ -97,7 +97,7 @@
     private void CheckFamily()
     {
         Console.WriteLine($"Family: {family.StreetName} {family.HouseNumber} {family.Adults[0].FirstName} {family.Children[0].FirstName} {family.Pets[0].Name}");
-        FamilyService.CreateFamily(family);
+        FamilyService.CreateFamilyAsync(family);
         NavigationManager.NavigateTo("/");
     }
 

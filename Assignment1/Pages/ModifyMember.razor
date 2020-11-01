@@ -8,7 +8,7 @@
 
 @if (ActionType.Equals("Edit") && MemberType.Equals("Pet"))
 {
-    <PetEditForm Pet="@selectedPet" Family="@selectedFamily"></PetEditForm>
+    <PetEditForm Pet="selectedPet" Family="@selectedFamily"></PetEditForm>
 }
 
 @if (ActionType.Equals("Edit") && (MemberType.Equals("Adult") || MemberType.Equals("Child")))
@@ -36,17 +36,24 @@
     
     protected override void OnInitialized()
     {
-        foreach (var family in FamilyService.GetAllFamilies())
+        Console.WriteLine("Retrieving families....");
+        List<Family> families = FamilyService.GetCachedFamilies();
+        Console.WriteLine("Modify member page here");
+        foreach (var family in families)
         {
             address = family.StreetName +" "+ family.HouseNumber;
             if (address.Equals(FamilyAddress)){
+                Console.WriteLine("Selected a family in modify member");
                 selectedFamily = family;
                 if (MemberType.Equals("Adult") && Id != null)
                 {
                     foreach (var adult in family.Adults)
                     {
                         if (adult.Id == Int32.Parse(Id))
+                        {
+                            Console.WriteLine("\t\tSelected adult with id" + Id);
                             selectedPerson = adult;
+                        }
                     }
                 }
 
@@ -64,7 +71,10 @@
                     foreach (var child in family.Children)
                     {
                         if (child.Id == Int32.Parse(Id))
+                        {
+                            Console.WriteLine("\t\tSelected child with id" + Id);
                             selectedPerson = child;
+                        }
                     }
                 }
             }

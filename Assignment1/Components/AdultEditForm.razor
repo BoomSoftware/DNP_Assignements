@@ -149,6 +149,7 @@
 
     protected override void OnInitialized()
     {
+        Console.WriteLine("Got here adult edit form");
         if (Adult != null)
         {
                updatedFirstname = Adult.FirstName;
@@ -160,7 +161,7 @@
                     updatedHairColor = Adult.HairColor;
                     updatedEyeColor = Adult.EyeColor;
                     
-                    Console.WriteLine(updatedAge);
+                    Console.WriteLine("Adult is not null with age " + updatedAge);
             
                     if (Adult is Adult)
                     {
@@ -189,7 +190,7 @@
     {
         if (Adult is Adult)
         {
-            FamilyService.EditPerson(Family, new Adult()
+            FamilyService.EditPersonAsync(Family, new Adult()
             {
                 Age = updatedAge,
                 FirstName = updatedFirstname,
@@ -219,7 +220,7 @@
             if (interest5 != null && !interest5.Equals(""))
                 updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest5});
 
-            FamilyService.EditPerson(Family, new Child()
+            FamilyService.EditPersonAsync(Family, new Child()
             {
                 Age = updatedAge,
                 FirstName = updatedFirstname,
@@ -240,9 +241,9 @@
     public void RemoveMember()
     {
         if (Adult is Adult)
-            FamilyService.RemovePerson(Family, Adult, "Adult");
+            FamilyService.RemovePersonAsync(Family, Adult, "adults");
         if (Adult is Child)
-            FamilyService.RemovePerson(Family, Adult, "Child");
+            FamilyService.RemovePersonAsync(Family, Adult, "children");
 
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
