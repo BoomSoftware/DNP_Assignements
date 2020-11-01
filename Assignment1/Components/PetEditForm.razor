@@ -2,16 +2,36 @@
 @inject NavigationManager NavigationManager
 @inject IFamilyService FamilyService
 
-<h3>UserForm</h3>
-<button @onclick=RemoveMember>Remove Member</button>
-<input type="text"  @bind="petAge"/>
-<input type="text"  @bind="petName"/>
-<input type="text"  @bind="petSpices"/>
-<input type="submit" @onclick=EditPet value="Edit">
+<div class="wrapper">
+    <div class="inner">
+        <EditForm Model="@Pet" OnValidSubmit="EditPet">
+            <AuthorizeView Policy="MustBeAdministrator" Context="authorize">
+                <button @onclick=RemoveMember>Remove Member</button>
+            </AuthorizeView>
+            <div class="form-wrapper">
+                <label for>Name</label>
+                <input type="text" class="form-control" @bind="petName"/>
+            </div>
+            <div class="form-wrapper">
+                <label>Age</label>
+                <input type="text" class="form-control" @bind="petAge"/>
+            </div>
+            <div class="form-wrapper">
+                <label>Spices</label>
+                <input type="text" class="form-control" @bind="petSpices"/>
+            </div>
+            <input type="submit" value="Edit"/>
+        </EditForm>
+    </div>
+</div>
 
 @code {
-    [Parameter] public Family Family { get; set;}
-    [Parameter] public Pet Pet { get; set; }
+
+    [Parameter]
+    public Family Family { get; set; }
+
+    [Parameter]
+    public Pet Pet { get; set; }
 
     private int petAge;
     private string petName;

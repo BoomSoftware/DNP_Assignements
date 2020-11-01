@@ -7,67 +7,63 @@
 {
     <div class="wrapper">
         <div class="inner">
-            <EditForm Model=@newPersonModel>
+            <EditForm Model=@newPersonModel OnValidSubmit="AddNewMember">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
                 <div class="form-group">
                     <div class="form-wrapper">
                         <label for>First Name</label>
-                        <input type="text" class="form-control" @bind="firstName"/>
+                        <InputText class="form-control" @bind-Value="newPersonModel.FirstName"/>
                     </div>
                     <div class="form-wrapper">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" @bind="lastName"/>
+                        <InputText class="form-control" @bind-Value="newPersonModel.LastName"/>
                     </div>
                 </div>
                 <div class="form-wrapper">
                     <label>Age</label>
-                    <input type="number" class="form-control" @bind="age"/>
+                    <InputNumber class="form-control" @bind-Value="newPersonModel.Age"/>
                 </div>
                 <div class="form-group">
                     <div class="form-wrapper">
                         <label>Weight</label>
-                        <input type="text" class="form-control" @bind="weight"/>
+                        <InputNumber class="form-control" @bind-Value="newPersonModel.Weight"/>
                     </div>
 
                     <div class="form-wrapper">
                         <label>Height</label>
-                        <input type="text" class="form-control" @bind="height"/>
+                        <InputNumber class="form-control" @bind-Value="newPersonModel.Height"/>
                     </div>
                 </div>
 
 
                 <div class="form-wrapper">
                     <label>Sex</label>
-                    <select class="form-control" @bind="sex">
-                        <option>M</option>
-                        <option>F</option>
-                    </select>
+                    <InputSelect class="form-control" @bind-Value="newPersonModel.Sex">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </InputSelect>
                 </div>
 
                 <div class="form-group">
                     <div class="form-wrapper">
                         <label>Hair Color</label>
-                        <select class="form-control" @bind="hairColor">
-                            <option>Blond</option>
-                            <option>Red</option>
-                            <option>Brown</option>
-                            <option>Black</option>
-                            <option>White</option>
-                            <option>Gray</option>
-                            <option>Blue</option>
-                            <option>Leverpostej</option>
-                        </select>
+                        <InputSelect class="form-control" @bind-Value="newPersonModel.HairColor">
+                            @foreach (var hairColor in validHairColors)
+                            {
+                                <option value="@hairColor">@hairColor</option>
+                            }
+                        </InputSelect>
                     </div>
 
                     <div class="form-wrapper">
                         <label>Eye Color</label>
-                        <select class="form-control" @bind="eyeColor">
-                            <option>Brown</option>
-                            <option>Grey</option>
-                            <option>Green</option>
-                            <option>Blue</option>
-                            <option>Amber</option>
-                            <option>Hazel</option>
-                        </select>
+                        <InputSelect class="form-control" @bind-Value="newPersonModel.EyeColor">
+                            @foreach (var eyeColor in validEyeColors)
+                            {
+                                <option value="@eyeColor">@eyeColor</option>
+                            }
+                        </InputSelect>
                     </div>
                 </div>
 
@@ -112,8 +108,7 @@
                 }
 
 
-                <input type="submit" value="Add" @onclick=AddNewMember/>
-
+                <input type="submit" value="Add"/>
             </EditForm>
         </div>
     </div>
@@ -123,23 +118,28 @@
 {
     <div class="wrapper">
         <div class="inner">
-            <EditForm Model="@newPetModel">
+            <EditForm Model="@newPetModel" OnValidSubmit="AddNewMember">
                 <div class="form-wrapper">
                     <label>Name</label>
-                    <input type="text" class="form-control" @bind="petName"/>
+                    <InputText class="form-control" @bind-Value="newPetModel.Name"/>
                 </div>
 
                 <div class="form-wrapper">
                     <label>Age</label>
-                    <input type="number" class="form-control" @bind="petAge"/>
+                    <InputNumber class="form-control" @bind-Value="newPetModel.Age"/>
                 </div>
 
                 <div class="form-wrapper">
                     <label>Species</label>
-                    <input type="text" class="form-control" @bind="petSpecies"/>
+                    <InputSelect @bind-Value="@newPetModel.Species">
+                        @foreach (var species in validSpecies)
+                        {
+                            <option value="@species">@species</option>
+                        }
+                    </InputSelect>
                 </div>
 
-                <input type="submit" value="Add" @onclick=AddNewMember/>
+                <input type="submit" value="Add"/>
             </EditForm>
         </div>
     </div>
@@ -152,31 +152,35 @@
 
     [Parameter]
     public Family Family { get; set; }
-    
+
     [Parameter]
     public int FormCounter { get; set; }
+
     [Parameter]
     public EventCallback<int> FormCounterChanged { get; set; }
 
     private Person newPersonModel = new Person();
 
-    [Parameter] 
+    [Parameter]
     public Adult AdultToBeAdded { get; set; }
+
     [Parameter]
     public EventCallback<Adult> AdultToBeAddedChanged { get; set; }
-    
-    [Parameter] 
+
+    [Parameter]
     public Child ChildToBeAdded { get; set; }
+
     [Parameter]
     public EventCallback<Child> ChildToBeAddedChanged { get; set; }
-    
-    [Parameter] 
+
+    [Parameter]
     public Pet PetToBeAdded { get; set; }
+
     [Parameter]
     public EventCallback<Pet> PetToBeAddedChanged { get; set; }
-    
+
     private Pet newPetModel = new Pet();
-    
+
     private string firstName;
     private string lastName;
     private int age;
@@ -202,6 +206,9 @@
 
     async Task AddNewMember()
     {
+
+        Console.WriteLine(NavigationManager.Uri);
+        
         if (MemberType.Equals("Adult"))
         {
             List<Family> families = FamilyService.GetAllFamilies();
@@ -215,14 +222,14 @@
             AdultToBeAdded = new Adult
             {
                 Id = id,
-                Age = age,
-                FirstName = firstName,
-                LastName = lastName,
-                Height = height,
-                Sex = sex,
-                Weight = weight,
-                EyeColor = eyeColor,
-                HairColor = hairColor,
+                Age = newPersonModel.Age,
+                FirstName = newPersonModel.FirstName,
+                LastName = newPersonModel.LastName,
+                Height = newPersonModel.Height,
+                Sex = newPersonModel.Sex,
+                Weight = newPersonModel.Weight,
+                EyeColor = newPersonModel.EyeColor,
+                HairColor = newPersonModel.HairColor,
                 JobTitle = jobTitle
             };
             if (AdultToBeAdded == null)
@@ -230,8 +237,8 @@
             FamilyService.AddPerson(Family, AdultToBeAdded, MemberType);
             await AdultToBeAddedChanged.InvokeAsync(AdultToBeAdded);
         }
-        
-        
+
+
         if (MemberType.Equals("Pet"))
         {
             List<Family> families = FamilyService.GetAllFamilies();
@@ -245,15 +252,15 @@
 
             PetToBeAdded = new Pet
             {
-                Age = petAge,
-                Name = petName,
+                Age = newPetModel.Age,
+                Name = newPetModel.Name,
                 Id = id,
-                Species = petSpecies
+                Species = newPetModel.Species
             };
             FamilyService.AddPet(Family, PetToBeAdded);
             await PetToBeAddedChanged.InvokeAsync(PetToBeAdded);
         }
-        
+
         if (MemberType.Equals("Child"))
         {
             List<Family> families = FamilyService.GetAllFamilies();
@@ -264,9 +271,9 @@
                     id = child.Id + 1;
                 }
             }
-        
+
             interests = new List<ChildInterest>();
-        
+
             if (interest1 != null && !interest1.Equals(""))
                 interests.Add(new ChildInterest() {ChildId = id, InterestId = interest1});
             if (interest2 != null && !interest2.Equals(""))
@@ -281,14 +288,14 @@
             ChildToBeAdded = new Child
             {
                 Id = id,
-                Age = age,
-                FirstName = firstName,
-                LastName = lastName,
-                Height = height,
-                Sex = sex,
-                Weight = weight,
-                EyeColor = eyeColor,
-                HairColor = hairColor,
+                Age = newPersonModel.Age,
+                FirstName = newPersonModel.FirstName,
+                LastName = newPersonModel.LastName,
+                Height = newPersonModel.Height,
+                Sex = newPersonModel.Sex,
+                Weight = newPersonModel.Weight,
+                EyeColor = newPersonModel.EyeColor,
+                HairColor = newPersonModel.HairColor,
                 ChildInterests = interests
             };
             FamilyService.AddPerson(Family, ChildToBeAdded, MemberType);
@@ -304,8 +311,24 @@
         Console.WriteLine("Firing new event with " + FormCounter);
         if (FormCounter == 2 || FormCounter == 3)
             await FormCounterChanged.InvokeAsync(FormCounter);
-        if (FormCounter < 2)
+        if (!NavigationManager.Uri.Contains("addFamily"))
             NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
+
+
+    private List<string> validEyeColors = new List<string>
+    {
+        "Brown", "Grey", "Green", "Blue", "Amber", "Hazel"
+    };
+
+    private List<string> validHairColors = new List<string>
+    {
+        "Blonde", "Red", "Brown", "Black", "White", "Grey", "Blue", "Green", "Leverpostej"
+    };
+
+    private List<string> validSpecies = new List<string>
+    {
+        "Dog", "Cat", "Hamster", "Owl", "Snake", "Otter", "Budgerigar"
+    };
 
 }

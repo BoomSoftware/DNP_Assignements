@@ -114,7 +114,14 @@
         "Sex": "M"
       }
     ],
-    "Pets": []
+    "Pets": [
+      {
+        "Id": 21,
+        "Species": "Cat",
+        "Name": "Super Cat",
+        "Age": 3
+      }
+    ]
   },
   {
     "Id": 0,
@@ -2635,5 +2642,117 @@
         "Age": 1
       }
     ]
+  },
+  {
+    "Id": 0,
+    "StreetName": "Super Street",
+    "HouseNumber": 6,
+    "Adults": [
+      {
+        "JobTitle": null,
+        "Id": 61,
+        "FirstName": null,
+        "LastName": null,
+        "HairColor": "Blond",
+        "EyeColor": "Brown",
+        "Age": 0,
+        "Weight": 0,
+        "Height": 0,
+        "Sex": "M"
+      }
+    ],
+    "Children": [
+      {
+        "ChildInterests": [],
+        "Pets": null,
+        "Id": 64,
+        "FirstName": null,
+        "LastName": null,
+        "HairColor": "Blond",
+        "EyeColor": "Brown",
+        "Age": 0,
+        "Weight": 0,
+        "Height": 0,
+        "Sex": "M"
+      }
+    ],
+    "Pets": [
+      {
+        "Id": 20,
+        "Species": null,
+        "Name": null,
+        "Age": 0
+      }
+    ]
+  },
+  {
+    "Id": 0,
+    "StreetName": "Super Street",
+    "HouseNumber": 2,
+    "Adults": [
+      {
+        "JobTitle": null,
+        "Id": 62,
+        "FirstName": "Bob",
+        "LastName": "Bob",
+        "HairColor": "Grey",
+        "EyeColor": "Green",
+        "Age": 4,
+        "Weight": 3,
+        "Height": 50,
+        "Sex": "M"
+      }
+    ],
+    "Children": [
+      {
+        "ChildInterests": [],
+        "Pets": null,
+        "Id": 65,
+        "FirstName": "Bob",
+        "LastName": "Child Bob",
+        "HairColor": "Blue",
+        "EyeColor": "Amber",
+        "Age": 2,
+        "Weight": 30,
+        "Height": 50,
+        "Sex": "M"
+      }
+    ],
+    "Pets": []
+  },
+  {
+    "Id": 0,
+    "StreetName": "Nice Street",
+    "HouseNumber": 2,
+    "Adults": [
+      {
+        "JobTitle": null,
+        "Id": 63,
+        "FirstName": "Bob",
+        "LastName": "Super Bob",
+        "HairColor": "Black",
+        "EyeColor": "Blue",
+        "Age": 29,
+        "Weight": 2,
+        "Height": 155,
+        "Sex": "M"
+      }
+    ],
+    "Children": [
+      {
+        "ChildInterests": [],
+        "Pets": null,
+        "Id": 66,
+        "FirstName": "Child Girl",
+        "LastName": "girl",
+        "HairColor": "Brown",
+        "EyeColor": "Green",
+        "Age": 16,
+        "Weight": 6,
+        "Height": 50,
+        "Sex": "F"
+      }
+    ],
+    "Pets": []
   }
 ]

@@ -40,14 +40,14 @@
             <MovableImage ImgPath=@adultImgPath ItemWidth="100" ItemHeight="100" DefaultX="new Random().Next(800)" DefaultY="new Random().Next(500)" Person="@selectedFamily.Children[i]" Family="@selectedFamily"/>
         }
 
-        <div class="adding-box" style="top: @Height-20 'px'; left:  @Width-50 'px'">
-            <select class="form-control" @bind="memberType">
+        <AuthorizeView>
+            <select class="black-control" @bind="memberType">
                 <option>Adult</option>
                 <option>Child</option>
                 <option>Pet</option>
             </select>
-            <button type="button" @onclick=AddNewMember>Add member</button>
-        </div>
+            <button type="button" class="button-red" @onclick=AddNewMember>Add member</button>
+        </AuthorizeView>
     }
     @* <MovableImage ImgPath="img/avatars/child-boy1.png" DefaultX="500" DefaultY="300" ItemWidth="100" ItemHeight="100"/> *@
     @*  <MovableImage ImgPath="img/avatars/mother.png" DefaultX="1000" DefaultY="500" ItemWidth="100" ItemHeight="100" ItemSpeed="0.8" Animate="FadeIn"/> *@
@@ -56,10 +56,10 @@
 
 @code
 {
-    
+
     public int Height { get; set; }
     public int Width { get; set; }
-    
+
     [Parameter]
     public string FamilyAddress { get; set; }
 
@@ -68,13 +68,14 @@
     private string memberType = "Adult";
     private string address;
 
-    
-    async Task GetDimensions() {
+
+    async Task GetDimensions()
+    {
         var dimension = await BrowserService.GetDimensions();
         Height = dimension.Height;
         Width = dimension.Width;
     }
-    
+
     protected override void OnInitialized()
     {
         addingView = false;

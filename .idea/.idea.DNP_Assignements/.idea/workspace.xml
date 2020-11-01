@@ -27,30 +27,30 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/homepageupdate" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/privilegies" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feccad72-eb34-48c7-84fe-367b5cafb7ac" name="Default Changelist" comment="Pushing test stuff from jsonconnection">
-      <change afterPath="$PROJECT_DIR$/Assignment1/Components/MyTestCounter.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assignment1/Pages/CreateFamily.razor" afterDir="false" />
+    <list default="true" id="63eebeb9-feb2-4317-a614-4b0dad3ff2d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Merge_at_16_10_2020_17_20_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Merge_at_16_10_2020_17_20__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Merge_at_19_10_2020_18_31_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Merge_at_19_10_2020_18_31__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Merge_at_19_10_2020_22_47_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Merge_at_19_10_2020_22_47__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Components/AddNewAdultBox.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Components/AddPerson.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/CreatePerson.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Components/AddPet.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/CreatePet.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Data/IFamilyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/IFamilyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Family.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Family.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/AddFamily.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/Charts.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/Charts.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Components/MovableImage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/MovableImage.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/ModifyMember.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/ModifyMember.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/wwwroot/img/avatars/planet1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/wwwroot/img/avatars/planet1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment1/wwwroot/json/families.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/wwwroot/json/families.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/wwwroot/json/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/wwwroot/json/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="homepage" />
+        <entry key="$PROJECT_DIR$" value="privilegies" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,11 +95,6 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Data/Implementation/UserJSONManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Toni/RiderProjects/DNP_Assignements/Assignment1/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -110,15 +105,12 @@
         <option value="$PROJECT_DIR$/Assignment1/Pages/Custom.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Models/User.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/User/User.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" />
         <option value="$PROJECT_DIR$/Assignment1/wwwroot/css/login.css" />
         <option value="$PROJECT_DIR$/Assignment1/Pages/LoginPage.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/MovableImage.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/User.cs" />
         <option value="$PROJECT_DIR$/Assignment1/App.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Validation/CustomValidator.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Data/IUserService.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/wwwroot/css/site.css" />
         <option value="$PROJECT_DIR$/Assignment1/Components/UserBox.razor" />
         <option value="$PROJECT_DIR$/Assignment1/wwwroot/json/users.json" />
         <option value="$PROJECT_DIR$/Assignment1/_Imports.razor" />
@@ -134,17 +126,21 @@
         <option value="$PROJECT_DIR$/Assignment1/Pages/Charts.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONManager.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Components/CreatePerson.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Components/MyTestCounter.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Family.cs" />
         <option value="$PROJECT_DIR$/Assignment1/wwwroot/json/families.json" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Pages/Index.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Pages/CreateFamily.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/ModifyMember.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/MovableImage.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" />
       </list>
     </option>
   </component>
@@ -196,7 +192,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="feccad72-eb34-48c7-84fe-367b5cafb7ac" name="Default Changelist" comment="" />
+      <changelist id="63eebeb9-feb2-4317-a614-4b0dad3ff2d6" name="Default Changelist" comment="" />
       <created>1602057049488</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -211,6 +207,11 @@
       <workItem from="1602923007046" duration="20096000" />
       <workItem from="1602959324075" duration="7246000" />
       <workItem from="1603010845935" duration="22262000" />
+      <workItem from="1603177958237" duration="5658000" />
+      <workItem from="1603185465537" duration="2660000" />
+      <workItem from="1603404533765" duration="999000" />
+      <workItem from="1603407087583" duration="668000" />
+      <workItem from="1603896426208" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="I tried to add branches">
       <created>1602066035770</created>
@@ -245,7 +246,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/homepageupdate" />
+                        <option value="origin/privilegies" />
                       </list>
                     </value>
                   </entry>
@@ -269,21 +270,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603125496264" />
-    <state width="1877" height="415" key="GridCell.Tab.0.bottom" timestamp="1603142198126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="123" key="GridCell.Tab.0.bottom" timestamp="1603188957470">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="123" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603188957470" />
     <state width="1877" height="415" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603142198126" />
-    <state width="1877" height="415" key="GridCell.Tab.0.center" timestamp="1603142198126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="123" key="GridCell.Tab.0.center" timestamp="1603188957470">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="123" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603188957470" />
     <state width="1877" height="415" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603142198126" />
-    <state width="1877" height="415" key="GridCell.Tab.0.left" timestamp="1603142198126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="123" key="GridCell.Tab.0.left" timestamp="1603188957470">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="123" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603188957470" />
     <state width="1877" height="415" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603142198126" />
-    <state width="1877" height="415" key="GridCell.Tab.0.right" timestamp="1603142198126">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="123" key="GridCell.Tab.0.right" timestamp="1603188957470">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="123" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603188957470" />
     <state width="1877" height="415" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603142198126" />
     <state x="184" y="86" key="MergeDialog" timestamp="1603023341042">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -313,9 +318,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602066316317" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602958012304">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="459" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1603147626254">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="459" y="146" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603147626254" />
+    <state x="622" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603147650464">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="622" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603147650464" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602958012304" />
     <state x="0" y="234" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603140427130">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -5,7 +5,9 @@
 <div class="wrapper">
     <div class="inner">
         <EditForm Model="@Adult" OnValidSubmit="EditPerson">
+        <AuthorizeView Policy="MustBeAdministrator" Context="authorize">
             <button @onclick=RemoveMember>Remove Member</button>
+        </AuthorizeView>
             <div class="form-group">
                 <div class="form-wrapper">
                     <label for>First Name</label>

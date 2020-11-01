@@ -3,68 +3,98 @@
 @using System.Diagnostics.CodeAnalysis
 @inject NavigationManager NavigationManager;
 
-    <img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onclick=DisplayPersonInfo @onmouseover=ShowName @onmouseout=HideName/>
-    <div class="img-text" style="@css">@name</div>
+<img src="@ImgPath" id="@StyleID" class="circle-icon" style="@css" alt="image not found" @onclick=DisplayPersonInfo @onmouseover=ShowName @onmouseout=HideName/>
+<div class="img-text" style="@css">@name</div>
 
 
 @code {
-    [Parameter] public string ImgPath { get; set;}
-    [Parameter] public double DefaultX { get; set; }
-    [Parameter] public double DefaultY { get; set; }
-    [Parameter] public string StyleID { get; set; }
-    [Parameter] public double ItemSpeed { get; set; }
-    [Parameter] public string Animate { get; set; }
-    [Parameter] public double ItemWidth { get; set; }
-    [Parameter] public double ItemHeight { get; set; }
-    [Parameter] public Person Person { get; set; }
-    [Parameter] public Pet Pet { get; set; }
-    [Parameter] public Family Family { get; set; }
+
+    [Parameter]
+    public string ImgPath { get; set; }
+
+    [Parameter]
+    public double DefaultX { get; set; }
+
+    [Parameter]
+    public double DefaultY { get; set; }
+
+    [Parameter]
+    public string StyleID { get; set; }
+
+    [Parameter]
+    public double ItemSpeed { get; set; }
+
+    [Parameter]
+    public string Animate { get; set; }
+
+    [Parameter]
+    public double ItemWidth { get; set; }
+
+    [Parameter]
+    public double ItemHeight { get; set; }
+
+    [Parameter]
+    public Person Person { get; set; }
+
+    [Parameter]
+    public Pet Pet { get; set; }
+
+    [Parameter]
+    public Family Family { get; set; }
+    
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; }
 
     private string name;
 
 
     public MovableItem MovableItem { get; set; }
-    [CascadingParameter] public AnimatedBackground ParentComponent { get; set; }
+
+    [CascadingParameter]
+    public AnimatedBackground ParentComponent { get; set; }
 
     private string css => $"top: {MovableItem.Y}px; " +
                           $"left: {MovableItem.X}px;" +
                           $"opacity: {MovableItem.Opacity};" +
                           $"width: {MovableItem.Width}px;" +
                           $"height: {MovableItem.Height}px;";
-    
+
 
     protected override async Task OnInitializedAsync()
     {
-            MovableItem = new MovableItem();
-                MovableItem.X = DefaultX;
-                MovableItem.Y = DefaultY;
-                MovableItem.Height = ItemHeight;
-                MovableItem.Width = ItemWidth;
-                MovableItem.Opacity = 1;
-        
-                if(ItemSpeed != null && ItemSpeed != 0)
-                    MovableItem.Speed = ItemSpeed;
-        
-                MovableItem.Event += (o, e) => StateHasChanged();
-        
-                ParentComponent.AddMovableImageChild(this);
-        //await MovableItem.AnimateItem("FadeIn");
+        MovableItem = new MovableItem();
+        MovableItem.X = DefaultX;
+        MovableItem.Y = DefaultY;
+        MovableItem.Height = ItemHeight;
+        MovableItem.Width = ItemWidth;
+        MovableItem.Opacity = 1;
+
+        if (ItemSpeed != null && ItemSpeed != 0)
+            MovableItem.Speed = ItemSpeed;
+
+        MovableItem.Event += (o, e) => StateHasChanged();
+
+        ParentComponent.AddMovableImageChild(this);
+    //await MovableItem.AnimateItem("FadeIn");
     }
 
     private void DisplayPersonInfo()
     {
-        if(Person != null && Person is Adult)
-            NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Adult/"+Person.Id);
-        if(Pet != null)
-            NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Pet/"+Pet.Id);
-        if(Person != null && Person is Child)
-            NavigationManager.NavigateTo("/modifyMember/"+Family.StreetName+" "+Family.HouseNumber+"/Edit/Child/"+Person.Id);
+        if (AuthenticationStateTask.Result.User.Identity.IsAuthenticated)
+        {
+            if (Person != null && Person is Adult)
+                NavigationManager.NavigateTo("/modifyMember/" + Family.StreetName + " " + Family.HouseNumber + "/Edit/Adult/" + Person.Id);
+            if (Pet != null)
+                NavigationManager.NavigateTo("/modifyMember/" + Family.StreetName + " " + Family.HouseNumber + "/Edit/Pet/" + Pet.Id);
+            if (Person != null && Person is Child)
+                NavigationManager.NavigateTo("/modifyMember/" + Family.StreetName + " " + Family.HouseNumber + "/Edit/Child/" + Person.Id);
+        }
     }
 
     private void ShowName()
     {
         if ((Person != null && Person is Adult) || (Person != null && Person is Child))
-            name = Person.FirstName +" "+ Person.LastName;
+            name = Person.FirstName + " " + Person.LastName;
         if (Pet != null)
             name = Pet.Name;
     }
@@ -73,8 +103,8 @@
     {
         name = "";
     }
-    
-    
+
+
 
 
 }
