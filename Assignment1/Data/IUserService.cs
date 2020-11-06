@@ -1,10 +1,13 @@
-﻿using Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Models;
 
 namespace Assignment1.Data
 {
     public interface IUserService
     {
-        User ValidateUser(string username, string password);
-        void AddUser(string username, string password);
+        Task<User> ValidateUserAsync(string username, string password);
+        Task AddUserAsync(string username, string password);
+
     }
 }

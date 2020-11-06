@@ -32,7 +32,7 @@ namespace Assignment1
             services.AddScoped<BrowserService>();
             services.AddBlazoredModal();
             services.AddSyncfusionBlazor();
-            services.AddScoped<IUserService, UserJSONManager>();
+            services.AddScoped<IUserService, UserAPIConsumer>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>

@@ -4,7 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using FamilyWebAPI.Models;
+using Models;
+using Adult = FamilyWebAPI.Models.Adult;
+using Child = FamilyWebAPI.Models.Child;
+using Family = FamilyWebAPI.Models.Family;
+using Pet = FamilyWebAPI.Models.Pet;
 
 namespace FamilyWebAPI.Data.Implementation
 {
@@ -15,6 +19,9 @@ namespace FamilyWebAPI.Data.Implementation
         private int lastAdultId;
         private int lastChildId;
         private int lastPetId;
+        private IList<User> _users;
+        private string userFile = "users.json";
+        
 
         public DataAccessServiceImpl()
         {
@@ -235,6 +242,34 @@ namespace FamilyWebAPI.Data.Implementation
             }
             await WriteFamiliesToFile();
         }
+
+        public async Task<User> LoginAsync(string username, string password)
+        {
+            List<User> users = new List<User>();
+            string userAsJson = await File.ReadAllTextAsync(userFile);
+            users = JsonSerializer.Deserialize<List<User>>(userAsJson);
+            foreach (var user in users)
+            {
+                if (user.Username.Equals(username) && user.Password.Equals(password))
+                {
+                    return user;
+                }
+            }
+
+            return null;
+        }
+
+        public async Task RegisterAsync(User user)
+        {
+            List<User> users = new List<User>();
+            string userAsJson = await File.ReadAllTextAsync(userFile);
+            users = JsonSerializer.Deserialize<List<User>>(userAsJson);
+            users.Add(user);
+            userAsJson = JsonSerializer.Serialize(users);
+            await File.WriteAllTextAsync(userFile,userAsJson);
+        }
+        
+
 
         private async Task WriteFamiliesToFile()
         {

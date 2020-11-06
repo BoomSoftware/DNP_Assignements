@@ -2,7 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Assignment1\Assignment1.csproj" />
+    </ItemGroup>
 
 
 </Project>

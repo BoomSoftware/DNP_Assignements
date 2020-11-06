@@ -145,7 +145,7 @@
     Console.WriteLine("Username: " + user.Username + " Password: " + user.Password + " Confirm Password: " + confPassword);
   }
 
-  private void ValidLoginFormSubmitted()
+  private async Task ValidLoginFormSubmitted()
   {
     Console.WriteLine("Calling valid login submitted");
     customLoginValidator.ClearErrors();
@@ -153,7 +153,7 @@
     var errors = new Dictionary<string, string>();
     try
     {
-      ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(user.Username, user.Password);
+     await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(user.Username, user.Password);
       NavigationManager.NavigateTo("/");
     }
     catch (Exception e)
@@ -169,7 +169,7 @@
     }
   }
 
-  private void ValidSignupFormSubmitted()
+  private async Task ValidSignupFormSubmitted()
   {
     customSignupValidator.ClearErrors();
     
@@ -184,7 +184,7 @@
       customSignupValidator.DisplayErrors(errors);
     else
     {
-      UserService.AddUser(user.Username, user.Password);
+     await UserService.AddUserAsync(user.Username, user.Password);
     }
     
   }

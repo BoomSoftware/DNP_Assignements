@@ -31,6 +31,7 @@ namespace FamilyWebAPI
             services.AddControllers();
             services.AddSingleton<IFamilyService, FamilyServiceImpl>();
             services.AddSingleton<IDataAccessService, DataAccessServiceImpl>();
+            services.AddSingleton<IUserService, UserServiceImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

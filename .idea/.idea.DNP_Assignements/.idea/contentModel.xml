@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Toni\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Toni\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_DNP_Assignements.1335489851.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Toni\RiderProjects\DNP_Assignements" t="IncludeFlat">
+    <e p="C:\Users\dumi_\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\dumi_\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_DNP_Assignements.454349515.00" t="ExcludeRecursive" />
+    <e p="C:\Users\dumi_\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\dumi_\RiderProjects\DNP_Assignements" t="IncludeFlat">
       <e p="Assignment1" t="IncludeRecursive">
         <e p="_Imports.razor" t="Include" />
         <e p="App.razor" t="Include" />
@@ -32,6 +33,7 @@
           <e p="Implementation" t="Include">
             <e p="CustomFamilyAPIConsumer.cs" t="Include" />
             <e p="FamilyJSONManager.cs" t="Include" />
+            <e p="UserAPIConsumer.cs" t="Include" />
             <e p="UserJSONManager.cs" t="Include" />
             <e p="WebClientFamilyService.cs" t="Include" />
           </e>
@@ -134,7 +136,6 @@
           <e p="json" t="Include">
             <e p="adults.json" t="Include" />
             <e p="families.json" t="Include" />
-            <e p="users.json" t="Include" />
           </e>
         </e>
       </e>
@@ -145,6 +146,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="FamiliesController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
           <e p="IDataAccessService.cs" t="Include" />
@@ -152,7 +154,9 @@
           <e p="Implementation" t="Include">
             <e p="DataAccessServiceImpl.cs" t="Include" />
             <e p="FamilyServiceImpl.cs" t="Include" />
+            <e p="UserServiceImpl.cs" t="Include" />
           </e>
+          <e p="IUserService.cs" t="Include" />
         </e>
         <e p="families.json" t="Include" />
         <e p="FamilyWebAPI.csproj" t="IncludeRecursive" />
@@ -177,6 +181,7 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="users.json" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
