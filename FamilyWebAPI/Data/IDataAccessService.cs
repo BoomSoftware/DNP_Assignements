@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Models;
+using FamilyWebAPI.Models;
 using Adult = FamilyWebAPI.Models.Adult;
 using Child = FamilyWebAPI.Models.Child;
 using Family = FamilyWebAPI.Models.Family;
@@ -38,8 +38,8 @@ namespace FamilyWebAPI.Data
 
         Task DeletePetFromFamilyAsync(string streetName, int houseNumber, int petId);
         
-        Task<User>LoginAsync (string username, string password);
-        Task RegisterAsync(User user);
+        Task<APIUser>LoginAsync (string username, string password);
+        Task RegisterAsync(APIUser user);
 
     }
 }

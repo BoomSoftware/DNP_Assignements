@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Models;
+using FamilyWebAPI.Models;
 using Adult = FamilyWebAPI.Models.Adult;
 using Child = FamilyWebAPI.Models.Child;
 using Family = FamilyWebAPI.Models.Family;
@@ -19,7 +19,7 @@ namespace FamilyWebAPI.Data.Implementation
         private int lastAdultId;
         private int lastChildId;
         private int lastPetId;
-        private IList<User> _users;
+        private IList<APIUser> _users;
         private string userFile = "users.json";
         
 
@@ -243,13 +243,15 @@ namespace FamilyWebAPI.Data.Implementation
             await WriteFamiliesToFile();
         }
 
-        public async Task<User> LoginAsync(string username, string password)
+        public async Task<APIUser> LoginAsync(string username, string password)
         {
-            List<User> users = new List<User>();
-            string userAsJson = await File.ReadAllTextAsync(userFile);
-            users = JsonSerializer.Deserialize<List<User>>(userAsJson);
+            List<APIUser> users = new List<APIUser>();
+            string userAsJson = File.ReadAllText(userFile);
+            Console.WriteLine("read " + userAsJson);
+            users = JsonSerializer.Deserialize<List<APIUser>>(userAsJson);
             foreach (var user in users)
             {
+                Console.WriteLine("user in login " + user.Username);
                 if (user.Username.Equals(username) && user.Password.Equals(password))
                 {
                     return user;
@@ -259,11 +261,11 @@ namespace FamilyWebAPI.Data.Implementation
             return null;
         }
 
-        public async Task RegisterAsync(User user)
+        public async Task RegisterAsync(APIUser user)
         {
-            List<User> users = new List<User>();
+            List<APIUser> users = new List<APIUser>();
             string userAsJson = await File.ReadAllTextAsync(userFile);
-            users = JsonSerializer.Deserialize<List<User>>(userAsJson);
+            users = JsonSerializer.Deserialize<List<APIUser>>(userAsJson);
             users.Add(user);
             userAsJson = JsonSerializer.Serialize(users);
             await File.WriteAllTextAsync(userFile,userAsJson);

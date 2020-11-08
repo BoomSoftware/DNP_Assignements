@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Models;
+using FamilyWebAPI.Models;
 
 namespace FamilyWebAPI.Data.Implementation
 {
@@ -14,13 +14,13 @@ namespace FamilyWebAPI.Data.Implementation
         }
 
 
-        public async Task<User> LoginAsync(string username, string password)
+        public async Task<APIUser> LoginAsync(string username, string password)
         {
           return await dataService.LoginAsync(username, password);
             
         }
 
-        public async Task RegisterAsync(User user)
+        public async Task RegisterAsync(APIUser user)
         {
             await dataService.RegisterAsync(user);
         }

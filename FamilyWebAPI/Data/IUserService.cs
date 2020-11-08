@@ -1,13 +1,13 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Models;
+using FamilyWebAPI.Models;
 
 namespace FamilyWebAPI.Data
 {
     public interface IUserService
     {
-        Task<User>LoginAsync (string username, string password);
-        Task RegisterAsync(User user);
+        Task<APIUser>LoginAsync (string username, string password);
+        Task RegisterAsync(APIUser user);
 
     }
 }

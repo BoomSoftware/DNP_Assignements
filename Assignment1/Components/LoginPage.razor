@@ -153,7 +153,8 @@
     var errors = new Dictionary<string, string>();
     try
     {
-     await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(user.Username, user.Password);
+      Console.WriteLine("Calling login from component");
+      await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(user.Username, user.Password);
       NavigationManager.NavigateTo("/");
     }
     catch (Exception e)

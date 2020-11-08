@@ -37,6 +37,7 @@
             {
                 foreach (var err in errors)
                 {
+                    Console.WriteLine("\tDisplaying error " + err.Key + " with value " + err.Value);
                     messageStore.Add(CurrentEditContext.Field(err.Key), err.Value);
                 }
 

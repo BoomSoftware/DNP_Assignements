@@ -1,1 +1,9 @@
-[{"Username":"Admin","Password":"12345","SecurityLevel":"Administrator"},{"Username":"User1","Password":"12345","SecurityLevel":"RegularUser"},{"Username":"User2","Password":"12345","SecurityLevel":"RegularUser"},{"Username":"User3","Password":"12345","SecurityLevel":"RegularUser"},{"Username":"User","Password":"user","SecurityLevel":"RegularUser"},{"Username":"User11","Password":"user11","SecurityLevel":"RegularUser"},{"Username":"User4","Password":"12345","SecurityLevel":"RegularUser"}]
+[
+  {"username":"Admin","password":"12345","securityLevel":"Administrator"},
+  {"username":"User1","password":"12345","securityLevel":"RegularUser"},
+  {"username":"User2","password":"12345","securityLevel":"RegularUser"},
+  {"username":"User3","password":"12345","securityLevel":"RegularUser"},
+  {"username":"User","password":"user","securityLevel":"RegularUser"},
+  {"username":"User11","password":"user11","securityLevel":"RegularUser"},
+  {"username":"User4","password":"12345","securityLevel":"RegularUser"}
+]
