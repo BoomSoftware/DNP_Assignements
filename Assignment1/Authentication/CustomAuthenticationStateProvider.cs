@@ -50,7 +50,8 @@ namespace Assignment1.Authentication
             
             ClaimsIdentity identity = new ClaimsIdentity();
             User user = await userService.ValidateUserAsync(username, password);
-            Console.WriteLine(user.Username);
+            Console.WriteLine("Gottttttttt user in Custom Auth");
+            //Console.WriteLine(user.Username);
             if (user != null)
             {
                identity = SetupClaimsForUser(user);

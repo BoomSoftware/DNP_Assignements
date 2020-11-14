@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Models
+namespace FamilyWebAPI.Models
 {
-    public class User
+    public class APIUser
     {
         [JsonPropertyName("username")]
         [Required]
