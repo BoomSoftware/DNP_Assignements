@@ -34,24 +34,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dfa2a7b-fa67-4e9d-9538-a7d857a1eb8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/UserAPIConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Controllers/UserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/IUserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserServiceImpl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Persistence/FamilyDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_01_11_2020_12_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_01_11_2020_12_35__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_01_11_2020_12_35_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_01_11_2020_12_35__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/wwwroot/json/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Data/IDataAccessService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/IDataAccessService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/DataAccessServiceImpl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/DataAccessServiceImpl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FamilyWebAPI/FamilyWebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/FamilyWebAPI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/families.json" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/families.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,9 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assignment1/Components/AddFamily.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Pages/AddFamily.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/AddPet.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Components/AddPerson.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Pages/Charts.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Components/CreatePerson.razor" />
@@ -146,10 +134,13 @@
         <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/DataAccessServiceImpl.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserServiceImpl.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Controllers/UserController.cs" />
-        <option value="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/UserAPIConsumer.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Program.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Persistance/FamilyDbContext.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Persistence/FamilyDbContext.cs" />
       </list>
     </option>
   </component>
@@ -163,6 +154,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -240,7 +232,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="feccad72-eb34-48c7-84fe-367b5cafb7ac" name="Default Changelist" comment="" />
+      <changelist id="0dfa2a7b-fa67-4e9d-9538-a7d857a1eb8d" name="Default Changelist" comment="" />
       <created>1602057049488</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -260,6 +252,7 @@
       <workItem from="1603547355202" duration="2461000" />
       <workItem from="1603649312455" duration="632000" />
       <workItem from="1604226543261" duration="23771000" />
+      <workItem from="1605170619127" duration="10185000" />
     </task>
     <task id="LOCAL-00001" summary="I tried to add branches">
       <created>1602066035770</created>
@@ -294,7 +287,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="privilegies" />
+                        <option value="origin/privilegies" />
                       </list>
                     </value>
                   </entry>
@@ -315,29 +308,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="Pushing test stuff from jsonconnection" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="313" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605178605838">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="313" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.920@0.0.1440.920" timestamp="1605178605838" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603125496264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603125496264" />
-    <state width="1397" height="242" key="GridCell.Tab.0.bottom" timestamp="1604683477039">
+    <state width="1397" height="242" key="GridCell.Tab.0.bottom" timestamp="1604685775644">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="242" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1604683477039" />
+    <state width="1397" height="242" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1604685775644" />
     <state width="1877" height="499" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604269226682" />
-    <state width="1397" height="242" key="GridCell.Tab.0.center" timestamp="1604683477039">
+    <state width="1397" height="242" key="GridCell.Tab.0.center" timestamp="1604685775644">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="242" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1604683477039" />
+    <state width="1397" height="242" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1604685775644" />
     <state width="1877" height="499" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604269226682" />
-    <state width="1397" height="242" key="GridCell.Tab.0.left" timestamp="1604683477039">
+    <state width="1397" height="242" key="GridCell.Tab.0.left" timestamp="1604685775644">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="242" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1604683477039" />
+    <state width="1397" height="242" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1604685775644" />
     <state width="1877" height="499" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604269226682" />
-    <state width="1397" height="242" key="GridCell.Tab.0.right" timestamp="1604683477039">
+    <state width="1397" height="242" key="GridCell.Tab.0.right" timestamp="1604685775644">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="242" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1604683477039" />
+    <state width="1397" height="242" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1604685775644" />
     <state width="1877" height="499" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604269226682" />
     <state x="184" y="86" key="MergeDialog" timestamp="1604230639209">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -364,9 +361,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602926379689" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603142355791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="414" y="212" key="Vcs.Push.Dialog.v2" timestamp="1605360980108">
+      <screen x="0" y="0" width="1440" height="920" />
     </state>
+    <state x="414" y="212" key="Vcs.Push.Dialog.v2/0.0.1440.920@0.0.1440.920" timestamp="1605360980108" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603142355791" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604230514961">
       <screen x="0" y="0" width="1920" height="1040" />
