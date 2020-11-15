@@ -11,11 +11,11 @@ namespace FamilyWebAPI.Controllers
     [Route("[controller]")]
     public class FamiliesController : ControllerBase
     {
-        private IFamilyService familyService;
+        private IFamilyRepo _familyRepo;
 
-        public FamiliesController(IFamilyService familyService)
+        public FamiliesController(IFamilyRepo familyRepo)
         {
-            this.familyService = familyService;
+            this._familyRepo = familyRepo;
         }
 
         [HttpPost]
@@ -26,7 +26,7 @@ namespace FamilyWebAPI.Controllers
                 return BadRequest(ModelState);
             try
             {
-                await familyService.CreateFamilyAsync(family);
+                await _familyRepo.CreateFamilyAsync(family);
                 return Created($"/{family.StreetName}&{family.HouseNumber}", family);
             }
             catch (Exception e)
@@ -41,8 +41,8 @@ namespace FamilyWebAPI.Controllers
         {
             try
             {
-                Console.WriteLine("Controller get families called");
-                IList<Family> families = await familyService.GetAllFamiliesAsync();
+                Console.WriteLine("API Controller get families called");
+                IList<Family> families = await _familyRepo.GetAllFamiliesAsync();
                 return Ok(families);
             }
             catch (Exception e)
@@ -60,7 +60,7 @@ namespace FamilyWebAPI.Controllers
             try
             {
                 Console.WriteLine("Get family by address called with " + streetName + houseNumber);
-                Family family = await familyService.GetFamilyByAddress(streetName, houseNumber);
+                Family family = await _familyRepo.GetFamilyByAddress(streetName, houseNumber);
                 return Ok(family);
             }
             catch (Exception e)
@@ -78,7 +78,7 @@ namespace FamilyWebAPI.Controllers
             try
             {
                 Console.WriteLine("Controller update family called");
-                await familyService.UpdateFamilyAsync(family);
+                await _familyRepo.UpdateFamilyAsync(family);
                 return NoContent();
             }
             catch (Exception e)
@@ -96,7 +96,7 @@ namespace FamilyWebAPI.Controllers
             try
             {
                 Console.WriteLine("Controller delete family called");
-                await familyService.DeleteFamilyAsync(streetName, houseNumber);
+                await _familyRepo.DeleteFamilyAsync(streetName, houseNumber);
                 return NoContent();
             }
             catch (Exception e)
@@ -116,7 +116,7 @@ namespace FamilyWebAPI.Controllers
                 return BadRequest(ModelState);
             try
             {
-                await familyService.AddAdultToFamilyAsync(streetName, houseNumber, adult);
+                await _familyRepo.AddAdultToFamilyAsync(streetName, houseNumber, adult);
                 return Created($"/{streetName}&{houseNumber}/{adult.Id}", adult);
             }
             catch (Exception e)
@@ -136,7 +136,7 @@ namespace FamilyWebAPI.Controllers
                 return BadRequest(ModelState);
             try
             {
-                await familyService.AddChildToFamilyAsync(streetName, houseNumber, child);
+                await _familyRepo.AddChildToFamilyAsync(streetName, houseNumber, child);
                 return Created($"/{streetName}&{houseNumber}/{child.Id}", child);
             }
             catch (Exception e)
@@ -156,7 +156,7 @@ namespace FamilyWebAPI.Controllers
                 return BadRequest(ModelState);
             try
             {
-                await familyService.AddPetToFamilyAsync(streetName, houseNumber, pet);
+                await _familyRepo.AddPetToFamilyAsync(streetName, houseNumber, pet);
                 return Created($"/{streetName}&{houseNumber}/{pet.Id}", pet);
             }
             catch (Exception e)
@@ -171,10 +171,10 @@ namespace FamilyWebAPI.Controllers
         public async Task<ActionResult> UpdateAdultInFamily([FromRoute] string streetName,
             [FromRoute] int houseNumber, [FromBody] Adult adult)
         {
-            Console.WriteLine("Controller update adult called");
+            Console.WriteLine("API Controller update adult called");
             try
             {
-                await familyService.UpdateAdultInFamilyAsync(streetName, houseNumber, adult);
+                await _familyRepo.UpdateAdultInFamilyAsync(streetName, houseNumber, adult);
                 return NoContent();
             }
             catch (Exception e)
@@ -192,7 +192,7 @@ namespace FamilyWebAPI.Controllers
             Console.WriteLine("Controller update child called");
             try
             {
-                await familyService.UpdateChildInFamilyAsync(streetName, houseNumber, child);
+                await _familyRepo.UpdateChildInFamilyAsync(streetName, houseNumber, child);
                 return NoContent();
             }
             catch (Exception e)
@@ -210,7 +210,7 @@ namespace FamilyWebAPI.Controllers
             Console.WriteLine("Controller update pet called");
             try
             {
-                await familyService.UpdatePetInFamilyAsync(streetName, houseNumber, pet);
+                await _familyRepo.UpdatePetInFamilyAsync(streetName, houseNumber, pet);
                 return NoContent();
             }
             catch (Exception e)
@@ -228,7 +228,7 @@ namespace FamilyWebAPI.Controllers
             try
             {
                 Console.WriteLine("Controller delete member called");
-                await familyService.DeleteMemberFromFamilyAsync(streetName, houseNumber, memberType, memberId);
+                await _familyRepo.DeleteMemberFromFamilyAsync(streetName, houseNumber, memberType, memberId);
                 return NoContent();
             }
             catch (Exception e)

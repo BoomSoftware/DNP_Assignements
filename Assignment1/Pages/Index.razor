@@ -88,11 +88,16 @@
     {
         if (address != null)
         {
+            Console.WriteLine(address);
             foreach (var family in families)
             {
+                
                 if (address.Equals(family.StreetName + " " + family.HouseNumber))
                 {
+                    Console.WriteLine("Found " + family.StreetName);
                     selectedFamily = family;
+                    Console.WriteLine("Selected family " + selectedFamily.Adults.Count + selectedFamily.Children.Count
+                                    + selectedFamily.Pets.Count);
                 }
             }
         }

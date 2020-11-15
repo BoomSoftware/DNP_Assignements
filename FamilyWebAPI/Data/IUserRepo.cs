@@ -4,7 +4,7 @@ using FamilyWebAPI.Models;
 
 namespace FamilyWebAPI.Data
 {
-    public interface IUserService
+    public interface IUserRepo
     {
         Task<APIUser>LoginAsync (string username, string password);
         Task RegisterAsync(APIUser user);

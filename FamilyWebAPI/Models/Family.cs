@@ -7,9 +7,6 @@ namespace FamilyWebAPI.Models
 {
     public class Family
     {
-         [JsonIgnore]
-        public int Id { get; set; }
-        
         [Required] 
         public string StreetName { get; set; }
         
@@ -43,18 +40,20 @@ namespace FamilyWebAPI.Models
             if (memberType.Equals("Adult"))
             {
                 Adults.Add((Adult) person);
-                Console.WriteLine(person);
+                Console.WriteLine("\t\tSuccessfully added adult");
             }
 
             if (memberType.Equals("Child"))
             {
                 Children.Add((Child) person);
+                Console.WriteLine("\t\tSuccessfully added child");
             }
         }
 
         public void AddPet(Pet pet)
         {
             Pets.Add(pet);
+            Console.WriteLine("\t\tSuccessfully added pet");
         }
 
         public void EditAdult(Adult updatedAdult)
@@ -63,7 +62,7 @@ namespace FamilyWebAPI.Models
             {
                 if (adult.Id == updatedAdult.Id)
                 {
-                    adult.Update(updatedAdult);
+                    Console.WriteLine("\t\tSuccessfully updated adult");
                 }
             }
         }
@@ -75,17 +74,21 @@ namespace FamilyWebAPI.Models
                 if (child.Id == updatedChild.Id)
                 {
                     child.Update(updatedChild);
+                    Console.WriteLine("\t\tSuccessfully updated child");
                 }
             } 
         }
 
         public void EditPet(Pet updatedPet)
         {
+            Console.WriteLine("Editing pets " + Pets.Count);
+            Console.WriteLine("Updated pet is " + updatedPet.Name);
             foreach (var pet in Pets)
             {
                 if (pet.Id == updatedPet.Id)
                 {
                     pet.Update(updatedPet);
+                    Console.WriteLine("\t\tSuccessfully updated pet");
                 }
             }
         }
@@ -95,16 +98,19 @@ namespace FamilyWebAPI.Models
             if (memberType.Equals("Adult"))
             {
                 Adults.RemoveAll(adult => adult.Id == id);
+                Console.WriteLine("\t\tSuccessfully removed adult");
             }
 
             if (memberType.Equals("Child"))
             {
                 Children.RemoveAll(child => child.Id == id);
+                Console.WriteLine("\t\tSuccessfully removed child");
             }
         }
 
         public void RemovePet(int id)
         {
+            Console.WriteLine("\t\tSuccessfully removed pet");
             Pets.RemoveAll(pet => pet.Id == id);
         }
     }

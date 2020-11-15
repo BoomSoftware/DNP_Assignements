@@ -80,7 +80,7 @@
     {
         addingView = false;
         GetDimensions();
-
+       // Console.WriteLine("Initialized family tree");
         List<Family> families = await FamilyService.GetAllFamiliesAsync();
         foreach (var family in families)
         {

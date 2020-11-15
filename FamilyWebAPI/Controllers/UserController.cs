@@ -10,11 +10,11 @@ namespace FamilyWebAPI.Controllers
     [Route("[controller]")]
     public class UserController: ControllerBase
     {
-        private IUserService _userService;
+        private IUserRepo _userRepo;
 
-        public UserController(IUserService userService)
+        public UserController(IUserRepo userRepo)
         {
-            this._userService = userService;
+            this._userRepo = userRepo;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace FamilyWebAPI.Controllers
             try
             {
                 Console.WriteLine("Users called " + username + " " + password);
-                APIUser user = await _userService.LoginAsync(username, password);
+                APIUser user = await _userRepo.LoginAsync(username, password);
                 Console.WriteLine($"API found user: {user.Username} {user.Password} {user.SecurityLevel}");
                 return Ok(user);
             }
@@ -43,7 +43,7 @@ namespace FamilyWebAPI.Controllers
                 return BadRequest(ModelState);
             try
             {
-                await _userService.RegisterAsync(user);
+                await _userRepo.RegisterAsync(user);
                 return Created($"/{user.Username}", user);
             }
             catch (Exception e)

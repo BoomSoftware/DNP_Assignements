@@ -22,8 +22,9 @@ namespace Assignment1.Data.Implementation
 
         public async Task<List<Family>> GetAllFamiliesAsync()
         {
-            Console.WriteLine("\t\tGet all families async called");
+            Console.WriteLine("Before GetStringAsync API request for retrieving all families");
             string message = await client.GetStringAsync(uri + "");
+            Console.WriteLine("After getting all the families from the API");
             cachedFamilies = JsonSerializer.Deserialize<List<Family>>(message);
             return cachedFamilies;
         }
@@ -64,9 +65,9 @@ namespace Assignment1.Data.Implementation
 
             string personAsJson = JsonSerializer.Serialize(person);
             HttpContent content = new StringContent(personAsJson, Encoding.UTF8, "application/json");
+            Console.WriteLine("Before making PutAsync API request for edit person");
             var httpResponseMessage = await client.PutAsync(finalUrl, content);
-            Console.WriteLine("Edit person " + httpResponseMessage.StatusCode);
-
+            Console.WriteLine("After getting the edit person request response");
         }
 
         public async Task EditPetAsync(Family family, Pet pet)
@@ -74,6 +75,7 @@ namespace Assignment1.Data.Implementation
             string finalUrl = $"{uri}/{family.StreetName}&{family.HouseNumber}/pets";
             string petAsJson = JsonSerializer.Serialize(pet);
             HttpContent content = new StringContent(petAsJson, Encoding.UTF8, "application/json");
+            Console.WriteLine("Before editing pet");
             var httpResponseMessage = await client.PutAsync(finalUrl, content);
             Console.WriteLine("Edit pet " + httpResponseMessage.StatusCode);
         }

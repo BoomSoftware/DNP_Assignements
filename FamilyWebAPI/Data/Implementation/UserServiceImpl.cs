@@ -4,7 +4,7 @@ using FamilyWebAPI.Models;
 
 namespace FamilyWebAPI.Data.Implementation
 {
-    public class UserServiceImpl : IUserService
+    public class UserServiceImpl : IUserRepo
     {
         private IDataAccessService dataService;
 
@@ -12,7 +12,6 @@ namespace FamilyWebAPI.Data.Implementation
         {
             this.dataService = dataService;
         }
-
 
         public async Task<APIUser> LoginAsync(string username, string password)
         {

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FamilyWebAPI.Data;
 using FamilyWebAPI.Data.Implementation;
 using FamilyWebAPI.Models;
+using FamilyWebAPI.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,9 +30,10 @@ namespace FamilyWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IFamilyService, FamilyServiceImpl>();
+            services.AddSingleton<IFamilyRepo, FamilyRepo>();
             services.AddSingleton<IDataAccessService, DataAccessServiceImpl>();
-            services.AddSingleton<IUserService, UserServiceImpl>();
+            services.AddSingleton<IUserRepo, UserRepo>();
+            services.AddDbContext<FamilyDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

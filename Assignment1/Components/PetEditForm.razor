@@ -45,9 +45,9 @@
     }
 
 
-    public void EditPet()
+    public async void EditPet()
     {
-        FamilyService.EditPetAsync(Family, new Pet()
+        await FamilyService.EditPetAsync(Family, new Pet()
         {
             Age = petAge,
             Name = petName,
@@ -57,9 +57,9 @@
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
 
-    public void RemoveMember()
+    public async void RemoveMember()
     {
-        FamilyService.RemovePetAsync(Family, Pet);
+        await FamilyService.RemovePetAsync(Family, Pet);
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
 

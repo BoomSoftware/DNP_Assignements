@@ -211,17 +211,17 @@
         
         if (MemberType.Equals("Adult"))
         {
-            List<Family> families = await FamilyService.GetAllFamiliesAsync();
-            foreach (var family in families)
-            {
-                foreach (var adult in family.Adults)
-                {
-                    id = adult.Id + 1;
-                }
-            }
+            //List<Family> families = await FamilyService.GetAllFamiliesAsync();
+            // foreach (var family in families)
+            // {
+            //     foreach (var adult in family.Adults)
+            //     {
+            //         id = adult.Id + 1;
+            //     }
+            // }
             AdultToBeAdded = new Adult
             {
-                Id = id,
+              //  Id = id,
                 Age = newPersonModel.Age,
                 FirstName = newPersonModel.FirstName,
                 LastName = newPersonModel.LastName,
@@ -241,20 +241,20 @@
 
         if (MemberType.Equals("Pet"))
         {
-            List<Family> families = await FamilyService.GetAllFamiliesAsync();
-            foreach (var family in families)
-            {
-                foreach (var pet in family.Pets)
-                {
-                    id = pet.Id + 1;
-                }
-            }
+            // List<Family> families = await FamilyService.GetAllFamiliesAsync();
+            // foreach (var family in families)
+            // {
+            //     foreach (var pet in family.Pets)
+            //     {
+            //         id = pet.Id + 1;
+            //     }
+            // }
 
             PetToBeAdded = new Pet
             {
                 Age = newPetModel.Age,
                 Name = newPetModel.Name,
-                Id = id,
+                //Id = id,
                 Species = newPetModel.Species
             };
             await FamilyService.AddPetAsync(Family, PetToBeAdded);
@@ -263,14 +263,14 @@
 
         if (MemberType.Equals("Child"))
         {
-            List<Family> families = await FamilyService.GetAllFamiliesAsync();
-            foreach (var family in families)
-            {
-                foreach (var child in family.Children)
-                {
-                    id = child.Id + 1;
-                }
-            }
+            // List<Family> families = await FamilyService.GetAllFamiliesAsync();
+            // foreach (var family in families)
+            // {
+            //     foreach (var child in family.Children)
+            //     {
+            //         id = child.Id + 1;
+            //     }
+            // }
 
             interests = new List<ChildInterest>();
 
@@ -287,7 +287,7 @@
 
             ChildToBeAdded = new Child
             {
-                Id = id,
+                //Id = id,
                 Age = newPersonModel.Age,
                 FirstName = newPersonModel.FirstName,
                 LastName = newPersonModel.LastName,
