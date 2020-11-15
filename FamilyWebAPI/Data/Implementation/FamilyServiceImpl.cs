@@ -4,7 +4,7 @@ using FamilyWebAPI.Models;
 
 namespace FamilyWebAPI.Data.Implementation
 {
-    public class FamilyServiceImpl : IFamilyService
+    public class FamilyServiceImpl : IFamilyRepo
     {
         private IDataAccessService dataService;
 

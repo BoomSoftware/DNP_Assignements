@@ -30,9 +30,9 @@ namespace FamilyWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IFamilyService, FamilyServiceImpl>();
+            services.AddSingleton<IFamilyRepo, FamilyRepo>();
             services.AddSingleton<IDataAccessService, DataAccessServiceImpl>();
-            services.AddSingleton<IUserService, UserServiceImpl>();
+            services.AddSingleton<IUserRepo, UserRepo>();
             services.AddDbContext<FamilyDbContext>();
         }
 

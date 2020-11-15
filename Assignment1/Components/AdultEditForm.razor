@@ -186,11 +186,11 @@
      
     }
 
-    public void EditPerson()
+    public async void EditPerson()
     {
         if (Adult is Adult)
         {
-            FamilyService.EditPersonAsync(Family, new Adult()
+            await FamilyService.EditPersonAsync(Family, new Adult()
             {
                 Age = updatedAge,
                 FirstName = updatedFirstname,
@@ -220,7 +220,7 @@
             if (interest5 != null && !interest5.Equals(""))
                 updatedInterest.Add(new ChildInterest() {ChildId = Adult.Id, InterestId = interest5});
 
-            FamilyService.EditPersonAsync(Family, new Child()
+            await FamilyService.EditPersonAsync(Family, new Child()
             {
                 Age = updatedAge,
                 FirstName = updatedFirstname,
@@ -234,16 +234,16 @@
                 ChildInterests = updatedInterest
             });
         }
-        Console.WriteLine("Edited adult and now going to family view");
+        //Console.WriteLine("Edited adult and now going to family view");
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }
 
-    public void RemoveMember()
+    public async void RemoveMember()
     {
         if (Adult is Adult)
-            FamilyService.RemovePersonAsync(Family, Adult, "adults");
+            await FamilyService.RemovePersonAsync(Family, Adult, "adults");
         if (Adult is Child)
-            FamilyService.RemovePersonAsync(Family, Adult, "children");
+            await FamilyService.RemovePersonAsync(Family, Adult, "children");
 
         NavigationManager.NavigateTo("/FamilyTree/" + Family.StreetName + " " + Family.HouseNumber);
     }

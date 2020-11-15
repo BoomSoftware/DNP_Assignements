@@ -12,11 +12,11 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="assignment4" uuid="daf79e48-db94-42b8-9ca6-355cc6e10be2">
+    <data-source source="LOCAL" name="assignment4" uuid="92f1363e-27ef-476e-8246-3b94e75ef2bc">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/assignment4</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3606/assignment4</jdbc-url>
     </data-source>
   </component>
 </project>

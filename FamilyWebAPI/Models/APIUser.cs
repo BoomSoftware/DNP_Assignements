@@ -5,6 +5,7 @@ namespace FamilyWebAPI.Models
 {
     public class APIUser
     {
+        [Key]
         [JsonPropertyName("username")]
         [Required]
         public string Username { get; set; }

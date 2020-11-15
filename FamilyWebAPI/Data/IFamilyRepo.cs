@@ -4,7 +4,7 @@ using FamilyWebAPI.Models;
 
 namespace FamilyWebAPI.Data
 {
-    public interface IFamilyService
+    public interface IFamilyRepo
     {
         Task<IList<Family>> GetAllFamiliesAsync();
         Task<Family> GetFamilyByAddress(string streetName, int? houseNumber);

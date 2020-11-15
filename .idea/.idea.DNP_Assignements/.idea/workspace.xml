@@ -33,10 +33,42 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feccad72-eb34-48c7-84fe-367b5cafb7ac" name="Default Changelist" comment="DataBase Tables">
+    <list default="true" id="feccad72-eb34-48c7-84fe-367b5cafb7ac" name="Default Changelist" comment="Updated master">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2020_09_17_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2020_09_17__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/FamilyRepo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserRepo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/20201114215601_InitialCreate.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/20201114215601_InitialCreate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/20201114215942_AddedUsersTable.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/20201114215942_AddedUsersTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/20201114224142_RemovedIdFromFamily.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/20201114224142_RemovedIdFromFamily.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FamilyWebAPI/Migrations/FamilyDbContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/o'" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_06_11_2020_18_30__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_06_11_2020_18_30__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_06_11_2020_18_30_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/shelf/Uncommitted_changes_before_Update_at_06_11_2020_18_30__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DNP_Assignements/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Data/Implementation/CustomFamilyAPIConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Data/Implementation/CustomFamilyAPIConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Controllers/FamiliesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Controllers/FamiliesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Data/IFamilyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/IFamilyRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/IUserRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/FamilyServiceImpl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/FamilyServiceImpl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserServiceImpl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserServiceImpl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/FamilyWebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/FamilyWebAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Models/APIUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Models/APIUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Models/Family.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Models/Family.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Persistence/FamilyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Persistence/FamilyDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +78,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="homepage" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,7 +94,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="privilegies" />
-                    <option name="lastUsedInstant" value="1602755010" />
+                    <option name="lastUsedInstant" value="1604996256" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1604852802" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="homepage" />
@@ -84,40 +120,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/UserJSONManager.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/CreatePerson.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/MyTestCounter.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/wwwroot/json/families.json" />
-        <option value="$PROJECT_DIR$/Assignment1/Pages/CreateFamily.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/FamilyJSONManager.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Adult.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Person.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Pet.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Child.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/ChildInterest.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/Family.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" />
         <option value="$PROJECT_DIR$/Assignment1/Startup.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Interest.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Data.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/FamilyWebAPI.csproj" />
-        <option value="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Properties/launchSettings.json" />
-        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/IFamilyService.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/FamilyServiceImpl.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/families.json" />
-        <option value="$PROJECT_DIR$/FamilyWebAPI/Controllers/FamiliesController.cs" />
-        <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Family.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Person.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Pet.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Models/ChildInterest.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Child.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Adult.cs" />
-        <option value="$PROJECT_DIR$/Assignment1/Pages/Index.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" />
-        <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/CustomFamilyAPIConsumer.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Data/IFamilyService.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/WebClientFamilyService.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Pages/ModifyMember.razor" />
@@ -130,11 +149,28 @@
         <option value="$PROJECT_DIR$/Assignment1/Authentication/CustomAuthenticationStateProvider.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Components/LoginPage.razor" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Controllers/UserController.cs" />
-        <option value="$PROJECT_DIR$/FamilyWebAPI/Models/APIUser.cs" />
         <option value="$PROJECT_DIR$/Assignment1/Models/FamilyModels/User.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/DataAccessServiceImpl.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/users.json" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Models/APIUser.cs" />
         <option value="$PROJECT_DIR$/FamilyWebAPI/Persistence/FamilyDbContext.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/IFamilyService.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/IFamilyRepo.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/IUserRepo.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserRepoImpl.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/FamilyRepoImpl.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/UserRepo.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/Index.razor" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Models/Family.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/AddNewThingBox.razor" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/92f1363e-27ef-476e-8246-3b94e75ef2bc/console.sql" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Data/Implementation/FamilyRepo.cs" />
+        <option value="$PROJECT_DIR$/FamilyWebAPI/Controllers/FamiliesController.cs" />
+        <option value="$PROJECT_DIR$/Assignment1/Pages/FamilyTree.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/AdultEditForm.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Components/PetEditForm.razor" />
+        <option value="$PROJECT_DIR$/Assignment1/Data/Implementation/CustomFamilyAPIConsumer.cs" />
       </list>
     </option>
   </component>
@@ -148,15 +184,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.FamilyWebAPI">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Assignment1: DNP_Assignements">
     <configuration name="Assignment1: DNP_Assignements" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Assignment1/Assignment1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -247,7 +282,12 @@
       <workItem from="1604605910418" duration="620000" />
       <workItem from="1604661002339" duration="7122000" />
       <workItem from="1604739878374" duration="1383000" />
-      <workItem from="1604851868111" duration="642000" />
+      <workItem from="1604851868111" duration="5272000" />
+      <workItem from="1604912144633" duration="2795000" />
+      <workItem from="1604956488027" duration="249000" />
+      <workItem from="1604995087977" duration="2833000" />
+      <workItem from="1605361521228" duration="10515000" />
+      <workItem from="1605431523400" duration="12648000" />
     </task>
     <task id="LOCAL-00001" summary="I tried to add branches">
       <created>1602066035770</created>
@@ -270,7 +310,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604269715697</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed user api">
+      <created>1604852783846</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604852783846</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated master">
+      <created>1604852869721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604852869721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,33 +362,51 @@
     <MESSAGE value="I tried to add branches" />
     <MESSAGE value="Pushing test stuff from jsonconnection" />
     <MESSAGE value="Added Web Service (consumption + exposure)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Web Service (consumption + exposure)" />
+    <MESSAGE value="Fixed user api" />
+    <MESSAGE value="Updated master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated master" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="708" y="345" key="#Notifications" timestamp="1605361888070">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="708" y="345" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1605361888070" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605390938851">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605390938851" />
+    <state x="740" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605361770037">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605361770037" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603125496264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603125496264" />
-    <state width="1877" height="448" key="GridCell.Tab.0.bottom" timestamp="1604696192997">
+    <state width="1877" height="337" key="GridCell.Tab.0.bottom" timestamp="1605442789833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="448" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604696192997" />
-    <state width="1877" height="448" key="GridCell.Tab.0.center" timestamp="1604696192997">
+    <state width="1877" height="337" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605442789833" />
+    <state width="1877" height="337" key="GridCell.Tab.0.center" timestamp="1605442789833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="448" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604696192997" />
-    <state width="1877" height="448" key="GridCell.Tab.0.left" timestamp="1604696192997">
+    <state width="1877" height="337" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605442789833" />
+    <state width="1877" height="337" key="GridCell.Tab.0.left" timestamp="1605442789833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="448" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604696192997" />
-    <state width="1877" height="448" key="GridCell.Tab.0.right" timestamp="1604696192997">
+    <state width="1877" height="337" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605442789833" />
+    <state width="1877" height="337" key="GridCell.Tab.0.right" timestamp="1605442789833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="448" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604696192997" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1604687520613">
+    <state width="1877" height="337" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605442789833" />
+    <state width="196" height="455" key="HiddenNamespacesPopup" timestamp="1605390888871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604687520613" />
+    <state width="196" height="455" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1605390888871" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1605361798039">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605361798039" />
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1603023341049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -343,41 +415,41 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1604234779062" />
-    <state x="190" y="202" key="RiderGenerateDialog" timestamp="1604250007462">
+    <state x="190" y="202" key="RiderGenerateDialog" timestamp="1605431740134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="190" y="202" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604250007462" />
-    <state x="5" y="152" key="SettingsEditor" timestamp="1603042566446">
+    <state x="190" y="202" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605431740134" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1605395122718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="5" y="152" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603042566446" />
-    <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog" timestamp="1602926379689">
+    <state x="0" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605395122718" />
+    <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog" timestamp="1605392139474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602926379689" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1604269723408">
+    <state x="93" y="100" width="774" height="847" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605392139474" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1604852877653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604269723408" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604852877653" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604740194636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604740194636" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604683822861">
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605361753956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604683822861" />
-    <state x="0" y="234" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603140427130">
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605361753956" />
+    <state x="0" y="0" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604996241945">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="234" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603140427130" />
+    <state x="0" y="0" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604996241945" />
     <state x="136" y="244" key="run.anything.popup" timestamp="1604255665174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="136" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604255665174" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1604739881051">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1605441092986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604739881051" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605441092986" />
   </component>
 </project>
